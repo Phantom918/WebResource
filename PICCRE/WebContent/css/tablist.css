@@ -1,0 +1,73 @@
+body{font-family:"ff-tisa-web-pro-1","ff-tisa-web-pro-2","Lucida Grande","Helvetica Neue",Helvetica,Arial,"Hiragino Sans GB","Hiragino Sans GB W3","WenQuanYi Micro Hei",sans-serif;}
+	/*所有文字的字体*/
+	*{ font-family:"ff-tisa-web-pro-1","ff-tisa-web-pro-2","Lucida Grande","Helvetica Neue",Helvetica,Arial,"Hiragino Sans GB","Hiragino Sans GB W3","Microsoft YaHei UI","Microsoft YaHei","WenQuanYi Micro Hei",sans-serif}
+	h1, .h1, h2, .h2, h3, .h3, h4, .h4, .lead {font-family:"ff-tisa-web-pro-1","ff-tisa-web-pro-2","Lucida Grande","Helvetica Neue",Helvetica,Arial,"Hiragino Sans GB","Hiragino Sans GB W3","Microsoft YaHei UI","Microsoft YaHei","WenQuanYi Micro Hei",sans-serif;}
+	/*连接样式*/
+	a{ cursor:pointer; }
+	/*图片居中*/
+ 	.imgCenter { width:100%;  height:100%; text-align:center; font-size:0; }
+	.imgCenter img { vertical-align:middle; max-height:88%; max-width:88%; }
+	@-webkit-viewport   { width: device-width; }
+	@-moz-viewport      { width: device-width; }
+	@-ms-viewport       { width: device-width; }
+	@-o-viewport        { width: device-width; }
+	@viewport           { width: device-width; }
+	/*顶部距离样式*/
+	.margin_top{ margin-top:0.5em }
+	/*底边距离样式*/
+	.margin_bottom{ padding-top:1em }
+	/*标题文字样式*/
+	.title_top{font-size:18px; font-weight:500; margin-top:0.5em; text-shadow: 0px 1px 0px rgba(0, 0, 0, 0.15) ;}
+	/*标签页内容内补样式*/
+	.lble_content{ padding:1em 1em 1em 1em ;}
+	/*表头样式*/
+	.table_header{ font-size:16px; background-color:#6CF; font-weight:bold ; }
+	/*tab栏样式*/
+	.nav-tabs li.active{
+		padding:5px;
+		background-color: #3FB6D8;
+		border: 1px solid #269abc;
+		border-bottom-color: transparent;
+		color: #FFFFFF;
+	}
+	.nav-tabs li.unactive{
+		padding:5px;
+		border:1px solid #ddd;
+		background-color:#FFFFFF;
+	}
+	.nav-tabs li  .tab-link{
+		padding:10px;
+		float: bottom;
+		font-size:16px;
+		cursor: pointer;
+	}
+/* 	.nav-tabs li  .tab-close{
+		float: right;
+		font-size:10px;
+		cursor: pointer;
+		color:#CC0000;
+	} */
+	
+	.nav-tabs li  .tab-close{
+		float: right;
+		opacity: 0.2;
+		font-size: 17px;
+		font-weight: bold;
+		line-height: 1;
+		color: rgb(0, 0, 0);
+		text-shadow: 0px 1px 0px rgb(255, 255, 255);
+	}
+	
+	.nav-tabs li  .tab-close:hover{
+		color: rgb(0, 0, 0);
+		text-decoration: none;
+		cursor: pointer;
+		opacity: 0.7;
+	}
+	
+	
+	
+	
+	
+	
+	

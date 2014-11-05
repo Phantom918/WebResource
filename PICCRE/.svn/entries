@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   repos="https://192.168.1.100/svn/picchr"
+   name=""
+   revision="469"
+   last-author="xiaochonggao"
+   uuid="d558abd4-af74-fa4b-8ca2-01a2a0437fc6"
+   url="https://192.168.1.100/svn/picchr/01_Workspace/04_SourceCode/trunk/PICCRE"
+   committed-rev="467"
+   kind="dir"
+   committed-date="2014-06-04T08:25:24.974000Z"/>
+<entry
+   name=".classpath"
+   checksum="62d3d751a48f690898c6f6e1e688f529"
+   last-author="tanlei"
+   text-time="2014-05-29T01:24:15.253000Z"
+   committed-rev="407"
+   kind="file"
+   committed-date="2014-05-29T01:24:15.253000Z"/>
+<entry
+   name=".project"
+   checksum="98400209a3b389f9cd353f5872dc7ae6"
+   last-author="tanlei"
+   text-time="2014-05-29T01:24:15.253000Z"
+   committed-rev="407"
+   kind="file"
+   committed-date="2014-05-29T01:24:15.253000Z"/>
+<entry
+   name=".settings"
+   kind="dir"/>
+<entry
+   name="WebContent"
+   kind="dir"/>
+<entry
+   name="build"
+   kind="dir"/>
+<entry
+   name="src"
+   kind="dir"/>
+</wc-entries>

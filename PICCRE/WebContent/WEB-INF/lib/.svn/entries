@@ -1,0 +1,608 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   repos="https://192.168.1.100/svn/picchr"
+   name=""
+   revision="469"
+   last-author="tanlei"
+   url="https://192.168.1.100/svn/picchr/01_Workspace/04_SourceCode/trunk/PICCRE/WebContent/WEB-INF/lib"
+   uuid="d558abd4-af74-fa4b-8ca2-01a2a0437fc6"
+   committed-rev="407"
+   kind="dir"
+   committed-date="2014-05-29T01:24:15.253000Z"/>
+<entry
+   name="activation.jar"
+   checksum="618e03383015bc1c14e90102361aa33f"
+   last-author="tanlei"
+   committed-rev="407"
+   text-time="2014-05-29T01:24:15.253000Z"
+   kind="file"
+   committed-date="2014-05-29T01:24:15.253000Z"
+   prop-time="2014-06-04T12:31:10.049000Z"/>
+<entry
+   name="asm-3.3.1.jar"
+   checksum="1ad1e8959324b0f680b8e62406955642"
+   last-author="tanlei"
+   committed-rev="407"
+   text-time="2014-05-29T01:24:15.253000Z"
+   kind="file"
+   committed-date="2014-05-29T01:24:15.253000Z"
+   prop-time="2014-06-04T12:31:13.035000Z"/>
+<entry
+   name="asm-commons-3.3.jar"
+   checksum="47d6178194c38fc70d4e27db08ae5d10"
+   last-author="tanlei"
+   committed-rev="407"
+   text-time="2014-05-29T01:24:15.253000Z"
+   kind="file"
+   committed-date="2014-05-29T01:24:15.253000Z"
+   prop-time="2014-06-04T12:31:12.183000Z"/>
+<entry
+   name="asm-tree-3.3.jar"
+   checksum="3eeafc985d3ca624abf2d3ad549180d0"
+   last-author="tanlei"
+   committed-rev="407"
+   text-time="2014-05-29T01:24:15.253000Z"
+   kind="file"
+   committed-date="2014-05-29T01:24:15.253000Z"
+   prop-time="2014-06-04T12:31:13.020000Z"/>
+<entry
+   name="c3p0-0.9.1.2.jar"
+   checksum="45db3fd891e1f22cc90109ac7e473c73"
+   last-author="tanlei"
+   committed-rev="407"
+   text-time="2014-05-29T01:24:15.253000Z"
+   kind="file"
+   committed-date="2014-05-29T01:24:15.253000Z"
+   prop-time="2014-06-04T12:31:10.774000Z"/>
+<entry
+   name="cglib-2.2.2.jar"
+   checksum="b3f681be48fce094cf01a045f5bdca6f"
+   last-author="tanlei"
+   committed-rev="407"
+   text-time="2014-05-29T01:24:15.253000Z"
+   kind="file"
+   committed-date="2014-05-29T01:24:15.253000Z"
+   prop-time="2014-06-04T12:31:07.857000Z"/>
+<entry
+   name="commons-beanutils-1.7.0.jar"
+   checksum="0f18acf5fa857f9959675e14d901a7ce"
+   last-author="tanlei"
+   committed-rev="407"
+   text-time="2014-05-29T01:24:15.253000Z"
+   kind="file"
+   committed-date="2014-05-29T01:24:15.253000Z"
+   prop-time="2014-06-04T12:31:13.516000Z"/>
+<entry
+   name="commons-collections-3.2.jar"
+   checksum="7b9216b608d550787bdf43a63d88bf3b"
+   last-author="tanlei"
+   committed-rev="407"
+   text-time="2014-05-29T01:24:15.253000Z"
+   kind="file"
+   committed-date="2014-05-29T01:24:15.253000Z"
+   prop-time="2014-06-04T12:31:09.571000Z"/>
+<entry
+   name="commons-fileupload-1.2.1.jar"
+   checksum="951b36984148fc4f4e901f06ab382273"
+   last-author="tanlei"
+   committed-rev="407"
+   text-time="2014-05-29T01:24:15.253000Z"
+   kind="file"
+   committed-date="2014-05-29T01:24:15.253000Z"
+   prop-time="2014-06-04T12:31:07.976000Z"/>
+<entry
+   name="commons-io-2.2.jar"
+   checksum="6ad49e3e16c2342e9ee9599ce04775e6"
+   last-author="tanlei"
+   committed-rev="407"
+   text-time="2014-05-29T01:24:15.253000Z"
+   kind="file"
+   committed-date="2014-05-29T01:24:15.253000Z"
+   prop-time="2014-06-04T12:31:07.808000Z"/>
+<entry
+   name="commons-lang-2.3.jar"
+   checksum="dcdcbb47176603907c9f79a1349193eb"
+   last-author="tanlei"
+   committed-rev="407"
+   text-time="2014-05-29T01:24:15.253000Z"
+   kind="file"
+   committed-date="2014-05-29T01:24:15.253000Z"
+   prop-time="2014-06-04T12:31:13.390000Z"/>
+<entry
+   name="commons-lang3-3.1.jar"
+   checksum="71b48e6b3e1b1dc73fe705604b9c7584"
+   last-author="tanlei"
+   committed-rev="407"
+   text-time="2014-05-29T01:24:15.253000Z"
+   kind="file"
+   committed-date="2014-05-29T01:24:15.253000Z"
+   prop-time="2014-06-04T12:31:11.324000Z"/>
+<entry
+   name="commons-logging-1.1.1.jar"
+   checksum="e2c390fe739b2550a218262b28f290ce"
+   last-author="tanlei"
+   committed-rev="407"
+   text-time="2014-05-29T01:24:15.253000Z"
+   kind="file"
+   committed-date="2014-05-29T01:24:15.253000Z"
+   prop-time="2014-06-04T12:31:09.675000Z"/>
+<entry
+   name="dom4j-1.6.1.jar"
+   checksum="4d8f51d3fe3900efc6e395be48030d6d"
+   last-author="tanlei"
+   committed-rev="407"
+   text-time="2014-05-29T01:24:15.253000Z"
+   kind="file"
+   committed-date="2014-05-29T01:24:15.253000Z"
+   prop-time="2014-06-04T12:31:11.369000Z"/>
+<entry
+   name="ezmorph-1.0.5.jar"
+   checksum="db24c70f2754d09e396942c5614d426a"
+   last-author="tanlei"
+   committed-rev="407"
+   text-time="2014-05-29T01:24:15.253000Z"
+   kind="file"
+   committed-date="2014-05-29T01:24:15.253000Z"
+   prop-time="2014-06-04T12:31:13.075000Z"/>
+<entry
+   name="freemarker-2.3.15.jar"
+   checksum="0c3500f8028b6691740ca30012b66185"
+   last-author="tanlei"
+   committed-rev="407"
+   text-time="2014-05-29T01:24:15.253000Z"
+   kind="file"
+   committed-date="2014-05-29T01:24:15.253000Z"
+   prop-time="2014-06-04T12:31:09.010000Z"/>
+<entry
+   name="javassist-3.11.0.GA.jar"
+   checksum="cb8f91e65864b85c8c6f87164e3252a5"
+   last-author="tanlei"
+   committed-rev="407"
+   text-time="2014-05-29T01:24:15.253000Z"
+   kind="file"
+   committed-date="2014-05-29T01:24:15.253000Z"
+   prop-time="2014-06-04T12:31:07.627000Z"/>
+<entry
+   name="javax.mail.jar"
+   checksum="7568b973bb2e3cc6f150ad908ddf349f"
+   last-author="tanlei"
+   committed-rev="407"
+   text-time="2014-05-29T01:24:15.253000Z"
+   kind="file"
+   committed-date="2014-05-29T01:24:15.253000Z"
+   prop-time="2014-06-04T12:31:09.655000Z"/>
+<entry
+   name="json-lib-2.2.2-jdk15.jar"
+   checksum="be601c6de2e1c9073d5c4c27436f74c1"
+   last-author="tanlei"
+   committed-rev="407"
+   text-time="2014-05-29T01:24:15.253000Z"
+   kind="file"
+   committed-date="2014-05-29T01:24:15.253000Z"
+   prop-time="2014-06-04T12:31:07.960000Z"/>
+<entry
+   name="junit-4.11.jar"
+   checksum="3c42be5ea7cbf3635716abbb429cb90d"
+   last-author="tanlei"
+   committed-rev="407"
+   text-time="2014-05-29T01:24:15.253000Z"
+   kind="file"
+   committed-date="2014-05-29T01:24:15.253000Z"
+   prop-time="2014-06-04T12:31:11.254000Z"/>
+<entry
+   name="log4j-1.2.17.jar"
+   checksum="04a41f0a068986f0f73485cf507c0f40"
+   last-author="tanlei"
+   committed-rev="407"
+   text-time="2014-05-29T01:24:15.253000Z"
+   kind="file"
+   committed-date="2014-05-29T01:24:15.253000Z"
+   prop-time="2014-06-04T12:31:08.862000Z"/>
+<entry
+   name="mybatis-3.1.1.jar"
+   checksum="a2ebda40a5ddd197ebcb6b6b67bb686c"
+   last-author="tanlei"
+   committed-rev="407"
+   text-time="2014-05-29T01:24:15.253000Z"
+   kind="file"
+   committed-date="2014-05-29T01:24:15.253000Z"
+   prop-time="2014-06-04T12:31:12.884000Z"/>
+<entry
+   name="mybatis-generator-core-1.3.2.jar"
+   checksum="662e3b2144b3665f755a52492976e31d"
+   last-author="tanlei"
+   committed-rev="407"
+   text-time="2014-05-29T01:24:15.253000Z"
+   kind="file"
+   committed-date="2014-05-29T01:24:15.253000Z"
+   prop-time="2014-06-04T12:31:07.934000Z"/>
+<entry
+   name="mybatis-spring-1.2.0.jar"
+   checksum="c4e99256e00f35e6227aaf5b747c0548"
+   last-author="tanlei"
+   committed-rev="407"
+   text-time="2014-05-29T01:24:15.253000Z"
+   kind="file"
+   committed-date="2014-05-29T01:24:15.253000Z"
+   prop-time="2014-06-04T12:31:08.880000Z"/>
+<entry
+   name="mysql-connector-java-5.1.25-bin.jar"
+   checksum="24a6d6cab39d9fd970e0ee00bd2f9e7c"
+   last-author="tanlei"
+   committed-rev="407"
+   text-time="2014-05-29T01:24:15.253000Z"
+   kind="file"
+   committed-date="2014-05-29T01:24:15.253000Z"
+   prop-time="2014-06-04T12:31:09.144000Z"/>
+<entry
+   name="ognl-3.0.6.jar"
+   checksum="2a8fb06b52574e498ed256b8fc64055e"
+   last-author="tanlei"
+   committed-rev="407"
+   text-time="2014-05-29T01:24:15.253000Z"
+   kind="file"
+   committed-date="2014-05-29T01:24:15.253000Z"
+   prop-time="2014-06-04T12:31:12.658000Z"/>
+<entry
+   name="ojdbc14.jar"
+   checksum="df40bba7fa52ac4c77b0c2652172fb71"
+   last-author="tanlei"
+   committed-rev="407"
+   text-time="2014-05-29T01:24:15.253000Z"
+   kind="file"
+   committed-date="2014-05-29T01:24:15.253000Z"
+   prop-time="2014-06-04T12:31:11.732000Z"/>
+<entry
+   name="org.hamcrest.core_1.1.0.v20090501071000.jar"
+   checksum="44736076c639e41b1451f8ad71dd512a"
+   last-author="tanlei"
+   committed-rev="407"
+   text-time="2014-05-29T01:24:15.253000Z"
+   kind="file"
+   committed-date="2014-05-29T01:24:15.253000Z"
+   prop-time="2014-06-04T12:31:07.992000Z"/>
+<entry
+   name="poi-3.9-20121203.jar"
+   checksum="e614ff86318ad24940219fc045586fcc"
+   last-author="tanlei"
+   committed-rev="407"
+   text-time="2014-05-29T01:24:15.253000Z"
+   kind="file"
+   committed-date="2014-05-29T01:24:15.253000Z"
+   prop-time="2014-06-04T12:31:13.335000Z"/>
+<entry
+   name="poi-examples-3.9-20121203.jar"
+   checksum="fd1998c953bda968a6bc8d4065c02a8e"
+   last-author="tanlei"
+   committed-rev="407"
+   text-time="2014-05-29T01:24:15.253000Z"
+   kind="file"
+   committed-date="2014-05-29T01:24:15.253000Z"
+   prop-time="2014-06-04T12:31:08.039000Z"/>
+<entry
+   name="poi-excelant-3.9-20121203.jar"
+   checksum="5220cd5ea0421634fc78d07ed234587b"
+   last-author="tanlei"
+   committed-rev="407"
+   text-time="2014-05-29T01:24:15.253000Z"
+   kind="file"
+   committed-date="2014-05-29T01:24:15.253000Z"
+   prop-time="2014-06-04T12:31:12.117000Z"/>
+<entry
+   name="poi-ooxml-3.9-20121203.jar"
+   checksum="a03b94af357fdc8b0619986188f292bd"
+   last-author="tanlei"
+   committed-rev="407"
+   text-time="2014-05-29T01:24:15.253000Z"
+   kind="file"
+   committed-date="2014-05-29T01:24:15.253000Z"
+   prop-time="2014-06-04T12:31:09.460000Z"/>
+<entry
+   name="poi-ooxml-schemas-3.9-20121203.jar"
+   checksum="96dcd436f816c343efbe084d5d0a0882"
+   last-author="tanlei"
+   committed-rev="407"
+   text-time="2014-05-29T01:24:15.253000Z"
+   kind="file"
+   committed-date="2014-05-29T01:24:15.253000Z"
+   prop-time="2014-06-04T12:31:08.735000Z"/>
+<entry
+   name="poi-scratchpad-3.9-20121203.jar"
+   checksum="4c109f769273fd94c06ac77e7c0b68dd"
+   last-author="tanlei"
+   committed-rev="407"
+   text-time="2014-05-29T01:24:15.253000Z"
+   kind="file"
+   committed-date="2014-05-29T01:24:15.253000Z"
+   prop-time="2014-06-04T12:31:10.024000Z"/>
+<entry
+   name="slf4j-api-1.7.5.jar"
+   checksum="3b1ececad9ebc3fbad2953ccf4a070ca"
+   last-author="tanlei"
+   committed-rev="407"
+   text-time="2014-05-29T01:24:15.253000Z"
+   kind="file"
+   committed-date="2014-05-29T01:24:15.253000Z"
+   prop-time="2014-06-04T12:31:09.829000Z"/>
+<entry
+   name="slf4j-log4j12-1.7.5.jar"
+   checksum="371e35747d6bd35e3800034bdac4150e"
+   last-author="tanlei"
+   committed-rev="407"
+   text-time="2014-05-29T01:24:15.253000Z"
+   kind="file"
+   committed-date="2014-05-29T01:24:15.253000Z"
+   prop-time="2014-06-04T12:31:10.674000Z"/>
+<entry
+   name="spring-aop-3.2.2.RELEASE.jar"
+   checksum="a5a5c304e577f2a3c5237f74af9398ce"
+   last-author="tanlei"
+   committed-rev="407"
+   text-time="2014-05-29T01:24:15.253000Z"
+   kind="file"
+   committed-date="2014-05-29T01:24:15.253000Z"
+   prop-time="2014-06-04T12:31:09.810000Z"/>
+<entry
+   name="spring-aspects-3.2.2.RELEASE.jar"
+   checksum="590e27263e86c2dafa703d0aa7fc1768"
+   last-author="tanlei"
+   committed-rev="407"
+   text-time="2014-05-29T01:24:15.253000Z"
+   kind="file"
+   committed-date="2014-05-29T01:24:15.253000Z"
+   prop-time="2014-06-04T12:31:11.402000Z"/>
+<entry
+   name="spring-beans-3.2.2.RELEASE.jar"
+   checksum="5447dd45af64cee7d8a8c9afb6c12b92"
+   last-author="tanlei"
+   committed-rev="407"
+   text-time="2014-05-29T01:24:15.253000Z"
+   kind="file"
+   committed-date="2014-05-29T01:24:15.253000Z"
+   prop-time="2014-06-04T12:31:07.534000Z"/>
+<entry
+   name="spring-build-src-3.2.2.RELEASE.jar"
+   checksum="d8e7cf246bcb4b206f922424661ae706"
+   last-author="tanlei"
+   committed-rev="407"
+   text-time="2014-05-29T01:24:15.253000Z"
+   kind="file"
+   committed-date="2014-05-29T01:24:15.253000Z"
+   prop-time="2014-06-04T12:31:08.059000Z"/>
+<entry
+   name="spring-context-3.2.2.RELEASE.jar"
+   checksum="ffc5d7ab5d345f6eb71fe069f90d1b82"
+   last-author="tanlei"
+   committed-rev="407"
+   text-time="2014-05-29T01:24:15.253000Z"
+   kind="file"
+   committed-date="2014-05-29T01:24:15.253000Z"
+   prop-time="2014-06-04T12:31:13.739000Z"/>
+<entry
+   name="spring-context-support-3.2.2.RELEASE.jar"
+   checksum="27d0d11d7bfd6404a4a352898778f648"
+   last-author="tanlei"
+   committed-rev="407"
+   text-time="2014-05-29T01:24:15.253000Z"
+   kind="file"
+   committed-date="2014-05-29T01:24:15.253000Z"
+   prop-time="2014-06-04T12:31:07.775000Z"/>
+<entry
+   name="spring-core-3.2.2.RELEASE.jar"
+   checksum="da6a93e17dec225bf48902f947412a16"
+   last-author="tanlei"
+   committed-rev="407"
+   text-time="2014-05-29T01:24:15.253000Z"
+   kind="file"
+   committed-date="2014-05-29T01:24:15.253000Z"
+   prop-time="2014-06-04T12:31:13.005000Z"/>
+<entry
+   name="spring-expression-3.2.2.RELEASE.jar"
+   checksum="35d05523c5d83d3e92c9ff4188b333f7"
+   last-author="tanlei"
+   committed-rev="407"
+   text-time="2014-05-29T01:24:15.253000Z"
+   kind="file"
+   committed-date="2014-05-29T01:24:15.253000Z"
+   prop-time="2014-06-04T12:31:09.247000Z"/>
+<entry
+   name="spring-instrument-3.2.2.RELEASE.jar"
+   checksum="072598bad5cf620adade153f03553935"
+   last-author="tanlei"
+   committed-rev="407"
+   text-time="2014-05-29T01:24:15.253000Z"
+   kind="file"
+   committed-date="2014-05-29T01:24:15.253000Z"
+   prop-time="2014-06-04T12:31:12.101000Z"/>
+<entry
+   name="spring-instrument-tomcat-3.2.2.RELEASE.jar"
+   checksum="4d00cb3e3690fe68682c3b88008b2d85"
+   last-author="tanlei"
+   committed-rev="407"
+   text-time="2014-05-29T01:24:15.253000Z"
+   kind="file"
+   committed-date="2014-05-29T01:24:15.253000Z"
+   prop-time="2014-06-04T12:31:09.213000Z"/>
+<entry
+   name="spring-jdbc-3.2.2.RELEASE.jar"
+   checksum="07d41fb7addbbcbfd69c3a523df3b2cc"
+   last-author="tanlei"
+   committed-rev="407"
+   text-time="2014-05-29T01:24:15.253000Z"
+   kind="file"
+   committed-date="2014-05-29T01:24:15.253000Z"
+   prop-time="2014-06-04T12:31:09.315000Z"/>
+<entry
+   name="spring-jms-3.2.2.RELEASE.jar"
+   checksum="d13df2efa1356b7ff85648888be781ad"
+   last-author="tanlei"
+   committed-rev="407"
+   text-time="2014-05-29T01:24:15.253000Z"
+   kind="file"
+   committed-date="2014-05-29T01:24:15.253000Z"
+   prop-time="2014-06-04T12:31:10.503000Z"/>
+<entry
+   name="spring-orm-3.2.2.RELEASE.jar"
+   checksum="65e5583b967ccc26dbb1c6a05db3cde6"
+   last-author="tanlei"
+   committed-rev="407"
+   text-time="2014-05-29T01:24:15.253000Z"
+   kind="file"
+   committed-date="2014-05-29T01:24:15.253000Z"
+   prop-time="2014-06-04T12:31:09.195000Z"/>
+<entry
+   name="spring-oxm-3.2.2.RELEASE.jar"
+   checksum="d82bbef684b1ab92c3c37c9377327705"
+   last-author="tanlei"
+   committed-rev="407"
+   text-time="2014-05-29T01:24:15.253000Z"
+   kind="file"
+   committed-date="2014-05-29T01:24:15.253000Z"
+   prop-time="2014-06-04T12:31:13.054000Z"/>
+<entry
+   name="spring-struts-3.2.2.RELEASE.jar"
+   checksum="54d9e8df54847d9004702be95d7bd528"
+   last-author="tanlei"
+   committed-rev="407"
+   text-time="2014-05-29T01:24:15.253000Z"
+   kind="file"
+   committed-date="2014-05-29T01:24:15.253000Z"
+   prop-time="2014-06-04T12:31:09.477000Z"/>
+<entry
+   name="spring-test-3.2.2.RELEASE.jar"
+   checksum="7f7be6f099adcbffd5cbd473520ea3f7"
+   last-author="tanlei"
+   committed-rev="407"
+   text-time="2014-05-29T01:24:15.253000Z"
+   kind="file"
+   committed-date="2014-05-29T01:24:15.253000Z"
+   prop-time="2014-06-04T12:31:09.755000Z"/>
+<entry
+   name="spring-tx-3.2.2.RELEASE.jar"
+   checksum="1cad74991cfa607fe9bd55f841060dfb"
+   last-author="tanlei"
+   committed-rev="407"
+   text-time="2014-05-29T01:24:15.253000Z"
+   kind="file"
+   committed-date="2014-05-29T01:24:15.253000Z"
+   prop-time="2014-06-04T12:31:11.120000Z"/>
+<entry
+   name="spring-web-3.2.2.RELEASE.jar"
+   checksum="1c4d8632995fbaf1e468d044b5056e9e"
+   last-author="tanlei"
+   committed-rev="407"
+   text-time="2014-05-29T01:24:15.253000Z"
+   kind="file"
+   committed-date="2014-05-29T01:24:15.253000Z"
+   prop-time="2014-06-04T12:31:13.482000Z"/>
+<entry
+   name="spring-webmvc-3.2.2.RELEASE.jar"
+   checksum="f966776008469e63f86c6b84a81bddd2"
+   last-author="tanlei"
+   committed-rev="407"
+   text-time="2014-05-29T01:24:15.253000Z"
+   kind="file"
+   committed-date="2014-05-29T01:24:15.253000Z"
+   prop-time="2014-06-04T12:31:13.612000Z"/>
+<entry
+   name="spring-webmvc-portlet-3.2.2.RELEASE.jar"
+   checksum="ebf29e88140cd96f243d312c8691620b"
+   last-author="tanlei"
+   committed-rev="407"
+   text-time="2014-05-29T01:24:15.253000Z"
+   kind="file"
+   committed-date="2014-05-29T01:24:15.253000Z"
+   prop-time="2014-06-04T12:31:12.152000Z"/>
+<entry
+   name="stax-api-1.0.1.jar"
+   checksum="7d436a53c64490bee564c576babb36b4"
+   last-author="tanlei"
+   committed-rev="407"
+   text-time="2014-05-29T01:24:15.253000Z"
+   kind="file"
+   committed-date="2014-05-29T01:24:15.253000Z"
+   prop-time="2014-06-04T12:31:11.382000Z"/>
+<entry
+   name="struts2-convention-plugin-2.3.15.1.jar"
+   checksum="2589f634f6d20d4e963dcefb6857c61c"
+   last-author="tanlei"
+   committed-rev="407"
+   text-time="2014-05-29T01:24:15.253000Z"
+   kind="file"
+   committed-date="2014-05-29T01:24:15.253000Z"
+   prop-time="2014-06-04T12:31:11.514000Z"/>
+<entry
+   name="struts2-core-2.3.15.1.jar"
+   checksum="1f088acad999a41632d5feba9f9e5025"
+   last-author="tanlei"
+   committed-rev="407"
+   text-time="2014-05-29T01:24:15.253000Z"
+   kind="file"
+   committed-date="2014-05-29T01:24:15.253000Z"
+   prop-time="2014-06-04T12:31:12.615000Z"/>
+<entry
+   name="struts2-embeddedjsp-plugin-2.3.15.1.jar"
+   checksum="0101d8233467dbbcd7cdc34a7fca2db8"
+   last-author="tanlei"
+   committed-rev="407"
+   text-time="2014-05-29T01:24:15.253000Z"
+   kind="file"
+   committed-date="2014-05-29T01:24:15.253000Z"
+   prop-time="2014-06-04T12:31:11.076000Z"/>
+<entry
+   name="struts2-json-plugin-2.3.15.1.jar"
+   checksum="288e70e05c1ac65ad2cf51b6a481714d"
+   last-author="tanlei"
+   committed-rev="407"
+   text-time="2014-05-29T01:24:15.253000Z"
+   kind="file"
+   committed-date="2014-05-29T01:24:15.253000Z"
+   prop-time="2014-06-04T12:31:11.274000Z"/>
+<entry
+   name="struts2-spring-plugin-2.3.15.1.jar"
+   checksum="ece302a3f068dc40dae6133d78b29b68"
+   last-author="tanlei"
+   committed-rev="407"
+   text-time="2014-05-29T01:24:15.253000Z"
+   kind="file"
+   committed-date="2014-05-29T01:24:15.253000Z"
+   prop-time="2014-06-04T12:31:12.788000Z"/>
+<entry
+   name="tomcat-jdbc.jar"
+   checksum="8185daff4a063f5085b61975f2cf661f"
+   last-author="tanlei"
+   committed-rev="407"
+   text-time="2014-05-29T01:24:15.253000Z"
+   kind="file"
+   committed-date="2014-05-29T01:24:15.253000Z"
+   prop-time="2014-06-04T12:31:12.084000Z"/>
+<entry
+   name="tomcat-juli.jar"
+   checksum="cac2848a283896ed2b988c9b67bcbb7a"
+   last-author="tanlei"
+   committed-rev="407"
+   text-time="2014-05-29T01:24:15.253000Z"
+   kind="file"
+   committed-date="2014-05-29T01:24:15.253000Z"
+   prop-time="2014-06-04T12:31:13.349000Z"/>
+<entry
+   name="xmlbeans-2.3.0.jar"
+   checksum="64b05e7adad68fa65d02a8b6daa64afb"
+   last-author="tanlei"
+   committed-rev="407"
+   text-time="2014-05-29T01:24:15.253000Z"
+   kind="file"
+   committed-date="2014-05-29T01:24:15.253000Z"
+   prop-time="2014-06-04T12:31:10.471000Z"/>
+<entry
+   name="xwork-core-2.3.15.1.jar"
+   checksum="c75536fe24ef7d8b3cf8ddc4b624db5e"
+   last-author="tanlei"
+   committed-rev="407"
+   text-time="2014-05-29T01:24:15.253000Z"
+   kind="file"
+   committed-date="2014-05-29T01:24:15.253000Z"
+   prop-time="2014-06-04T12:31:11.490000Z"/>
+</wc-entries>

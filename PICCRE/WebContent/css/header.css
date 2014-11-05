@@ -1,0 +1,11 @@
+@charset "utf-8";
+/* CSS Document */
+ <!--表格头部样式-->
+ .k11{
+	 font-size:18px; 
+	 background-color:#6CF; 
+	 font-style:oblique; 
+	 font-weight:bold;
+	 margin-left:1em
+	}
+

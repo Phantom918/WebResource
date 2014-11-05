@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   repos="https://192.168.1.100/svn/picchr"
+   name=""
+   revision="559"
+   last-author="xiaochonggao"
+   url="https://192.168.1.100/svn/picchr/01_Workspace/04_SourceCode/trunk/PICCRE/src/cn/picc/action/recruitment"
+   uuid="d558abd4-af74-fa4b-8ca2-01a2a0437fc6"
+   committed-rev="547"
+   kind="dir"
+   committed-date="2014-06-11T01:49:22.070000Z"/>
+<entry
+   name="JobAction.java"
+   revision="603"
+   checksum="222c7d226f336c79e05f186878c9e67f"
+   last-author="tanlei"
+   text-time="2014-06-19T06:35:39.336000Z"
+   committed-rev="603"
+   kind="file"
+   committed-date="2014-06-26T07:37:39.260000Z"/>
+<entry
+   name="LoginAction.java"
+   checksum="9f59ebaaeb0bf906106fc061d5929137"
+   last-author="xiaochonggao"
+   text-time="2014-06-05T01:03:26.368000Z"
+   committed-rev="471"
+   kind="file"
+   committed-date="2014-06-05T01:03:26.368000Z"/>
+<entry
+   name="RequerAction.java"
+   checksum="90bd2e58d26ec1b944c74efc68d50410"
+   last-author="xiaochonggao"
+   text-time="2014-06-05T04:32:32.134000Z"
+   committed-rev="476"
+   kind="file"
+   committed-date="2014-06-05T04:32:32.134000Z"/>
+</wc-entries>

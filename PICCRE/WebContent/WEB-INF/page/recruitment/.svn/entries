@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   name=""
+   repos="https://192.168.1.100/svn/picchr"
+   revision="490"
+   last-author="xiaochonggao"
+   uuid="d558abd4-af74-fa4b-8ca2-01a2a0437fc6"
+   url="https://192.168.1.100/svn/picchr/01_Workspace/04_SourceCode/trunk/PICCRE/WebContent/WEB-INF/page/recruitment"
+   committed-rev="489"
+   kind="dir"
+   committed-date="2014-06-06T01:41:19.507000Z"/>
+<entry
+   name="job-choice.jsp"
+   revision="610"
+   checksum="9ea29e654d67a3015421316548272333"
+   last-author="tanlei"
+   text-time="2014-06-30T11:56:17.819000Z"
+   committed-rev="610"
+   kind="file"
+   committed-date="2014-06-30T11:59:44.634000Z"/>
+<entry
+   name="job-createResume.jsp"
+   revision="610"
+   checksum="1296c42429934ab42fa0afaa063a66aa"
+   last-author="tanlei"
+   committed-rev="610"
+   text-time="2014-06-30T11:56:27.775000Z"
+   kind="file"
+   committed-date="2014-06-30T11:59:44.634000Z"/>
+<entry
+   name="job-detail.jsp"
+   revision="610"
+   checksum="33ee304654b6071cfcf863d4af929132"
+   last-author="tanlei"
+   text-time="2014-06-30T11:56:41.273000Z"
+   committed-rev="610"
+   kind="file"
+   committed-date="2014-06-30T11:59:44.634000Z"/>
+<entry
+   name="job-errorPage.jsp"
+   checksum="b6ddfcc2945fc8a64a4df2f4f5c62317"
+   last-author="tanlei"
+   text-time="2014-06-04T08:02:42.853000Z"
+   committed-rev="465"
+   kind="file"
+   committed-date="2014-06-04T08:02:42.853000Z"/>
+<entry
+   name="job-index.jsp"
+   revision="603"
+   checksum="9ec263d04c75d8b88d9579bdbfa992dc"
+   last-author="tanlei"
+   text-time="2014-06-26T07:37:50.821000Z"
+   committed-rev="603"
+   kind="file"
+   committed-date="2014-06-26T07:37:39.260000Z"/>
+<entry
+   name="job-personal.jsp"
+   revision="610"
+   checksum="2c426d06d62d714db2bd1739e9fddff1"
+   last-author="tanlei"
+   committed-rev="610"
+   text-time="2014-06-30T11:55:35.436000Z"
+   kind="file"
+   committed-date="2014-06-30T11:59:44.634000Z"/>
+<entry
+   name="job-write.jsp"
+   revision="610"
+   checksum="d130e8a3c7fd2d5a905632ce430c6f2a"
+   last-author="tanlei"
+   text-time="2014-06-30T11:57:27.616000Z"
+   committed-rev="610"
+   kind="file"
+   committed-date="2014-06-30T11:59:44.634000Z"/>
+<entry
+   name="requer-introduce.jsp"
+   checksum="0f7b22cfab12adf5bbc171d41429d466"
+   last-author="xiaochonggao"
+   text-time="2014-06-05T04:32:32.134000Z"
+   committed-rev="476"
+   kind="file"
+   committed-date="2014-06-05T04:32:32.134000Z"/>
+</wc-entries>

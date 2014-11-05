@@ -1,0 +1,359 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="cn.hnne.hs.dao.user.UserBasicMapper">
+	<resultMap id="BaseResultMap" type="cn.hnne.hs.model.user.UserBasic">
+		<id column="user_id" property="userId" jdbcType="NUMERIC" />
+		<result column="login_id" property="loginId" jdbcType="VARCHAR" />
+		<result column="login_pwd" property="loginPwd" jdbcType="VARCHAR" />
+		<result column="name" property="name" jdbcType="VARCHAR" />
+		<result column="name_yomi" property="nameYomi" jdbcType="VARCHAR" />
+		<result column="email_addr" property="emailAddr" jdbcType="VARCHAR" />
+		<result column="tel" property="userTel" jdbcType="VARCHAR" />
+		<result column="user_state" property="userState" jdbcType="NUMERIC" />
+		<result column="ROLE_ID" property="roleId" jdbcType="NUMERIC" />
+		<result column="ROLE_NAME" property="roleName" jdbcType="VARCHAR" />
+		<!-- *************************************************************** -->
+		<result column="ORG_CODE" property="orgCode" jdbcType="VARCHAR" />
+		<result column="ORG_NAME" property="orgName" jdbcType="VARCHAR" />
+	</resultMap>
+
+	<sql id="Base_Column_List">
+		user_id, login_id, login_pwd, name, name_yomi, email_addr, user_state, tel, ORG_CODE, ORG_NAME
+	</sql>
+
+	<insert id="insertSelective" parameterType="cn.hnne.hs.model.user.UserBasic">
+		<selectKey resultType="java.lang.Short" order="BEFORE" keyProperty="userId">
+			SELECT USER_SEQ.NEXTVAL FROM DUAL
+		</selectKey>
+		insert into tb_user_basic
+		<trim prefix="(" suffix=")" suffixOverrides=",">
+			user_id,
+			<if test="loginId != null">
+				login_id,
+			</if>
+			<if test="loginPwd != null">
+				login_pwd,
+			</if>
+			<if test="name != null">
+				name,
+			</if>
+			<if test="nameYomi != null">
+				name_yomi,
+			</if>
+			<if test="emailAddr != null">
+				email_addr,
+			</if>
+			<if test="userState != null">
+				user_state,
+			</if>
+			<if test="userTel != null">
+				tel,
+			</if>
+			<!-- *************************************************************** -->
+			<if test="orgCode != null">
+				ORG_CODE,
+			</if>
+			<if test="orgName != null">
+				ORG_NAME
+			</if>
+		</trim>
+		<trim prefix="values (" suffix=")" suffixOverrides=",">
+		#{userId,jdbcType=NUMERIC},
+			<if test="loginId != null">
+				#{loginId,jdbcType=VARCHAR},
+			</if>
+			<if test="loginPwd != null">
+				#{loginPwd,jdbcType=VARCHAR},
+			</if>
+			<if test="name != null">
+				#{name,jdbcType=VARCHAR},
+			</if>
+			<if test="nameYomi != null">
+				#{nameYomi,jdbcType=VARCHAR},
+			</if>
+			<if test="emailAddr != null">
+				#{emailAddr,jdbcType=VARCHAR},
+			</if>
+			<if test="userState != null">
+				#{userState,jdbcType=NUMERIC},
+			</if>
+			<if test="userTel != null">
+				#{userTel,jdbcType=VARCHAR},
+			</if>
+			<!-- *************************************************************** -->
+			<if test="orgCode != null">
+				#{orgCode,jdbcType=VARCHAR},
+			</if>
+			<if test="orgName != null">
+				#{orgName,jdbcType=VARCHAR}
+			</if>
+		</trim>
+	</insert>
+
+	<delete id="deleteByPrimaryKey" parameterType="Integer">
+		DELETE FROM tb_user_basic
+		WHERE user_id = #{userId,jdbcType=NUMERIC}
+	</delete>
+
+	<delete id="deleteByPrimaryKeys" parameterType="Integer">
+		DELETE FROM tb_user_basic
+		WHERE user_id IN
+		<foreach item="userId" collection="array" open="(" separator=","
+			close=")">
+			#{userId,jdbcType=NUMERIC}
+		</foreach>
+	</delete>
+	
+	<update id="batchLogicDelete" parameterType="Integer">
+        DELETE FROM tb_user_basic
+        WHERE user_id IN
+        <foreach item="userId" collection="array" open="(" separator=","
+            close=")">
+            #{userId,jdbcType=NUMERIC}
+        </foreach>
+    </update>
+
+	<update id="banByPrimaryKey" parameterType="Integer">
+		UPDATE tb_user_basic
+		SET user_state = 2
+		WHERE user_id = #{userId,jdbcType=NUMERIC}
+	</update>
+
+	<update id="banByPrimaryKeys" parameterType="Integer">
+		UPDATE tb_user_basic SET user_state = 2
+		WHERE user_id IN
+		<foreach item="userId" collection="array" open="(" separator=","
+			close=")">
+			#{userId,jdbcType=NUMERIC}
+		</foreach>
+	</update>
+
+	<update id="restartByPrimaryKeys" parameterType="Integer">
+		UPDATE tb_user_basic SET user_state = 1
+		WHERE user_id IN
+		<foreach item="userId" collection="array" open="(" separator="," close=")">
+			#{userId,jdbcType=NUMERIC}
+		</foreach>
+	</update>
+
+	<update id="updateByPrimaryKeySelective" parameterType="cn.hnne.hs.model.user.UserBasic">
+		UPDATE tb_user_basic
+		<set>
+			<if test="loginId != null">
+				login_id = #{loginId,jdbcType=VARCHAR},
+			</if>
+			<if test="loginPwd != null">
+				login_pwd = #{loginPwd,jdbcType=VARCHAR},
+			</if>
+			<if test="name != null">
+				name = #{name,jdbcType=VARCHAR},
+			</if>
+			<if test="nameYomi != null">
+				name_yomi = #{nameYomi,jdbcType=VARCHAR},
+			</if>
+			<if test="emailAddr != null">
+				email_addr = #{emailAddr,jdbcType=VARCHAR},
+			</if>
+			<if test="userTel != null">
+				tel = #{userTel,jdbcType=VARCHAR},
+			</if>
+			<!-- *************************************************************** -->
+			<if test="orgCode != null">
+				ORG_CODE = #{orgCode,jdbcType=VARCHAR},
+			</if>
+			<if test="orgName != null">
+				ORG_NAME = #{orgName,jdbcType=VARCHAR},
+			</if>
+			
+			
+		</set>
+		WHERE user_id = #{userId,jdbcType=NUMERIC}
+	</update>
+	
+	<select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="Integer">
+		SELECT
+		ub.user_id, ub.login_id, ub.login_pwd, ub.name, ub.name_yomi, ub.email_addr, ub.user_state, ub.tel, ub.ORG_CODE, ub.ORG_NAME
+		FROM tb_user_basic ub
+		WHERE ub.user_id = #{userId,jdbcType=NUMERIC} AND ( ub.user_state = 1 or ub.user_state = -1)
+	</select>
+
+	<select id="selectAll" resultMap="BaseResultMap">
+		SELECT
+		ub.user_id, ub.login_id, ub.login_pwd, ub.name, ub.name_yomi, ub.email_addr, ub.user_state, ub.tel, ub.ORG_CODE, ub.ORG_NAME, ur.role_id, r.role_name
+		FROM tb_user_basic ub,tb_user_role ur,tb_role r
+		WHERE  ub.user_state = 1 and ub.user_id = ur.user_id and ur.role_id = r.role_id
+		ORDER BY ub.user_id DESC
+	</select>
+
+	<select id="selectBannedAll" resultMap="BaseResultMap">
+		SELECT
+		ub.user_id, ub.login_id, ub.login_pwd, ub.name, ub.name_yomi, ub.email_addr, ub.user_state, ub.tel, ub.ORG_CODE, ub.ORG_NAME, ur.role_id, r.role_name
+		FROM tb_user_basic ub,tb_user_role ur,tb_role r
+		WHERE ub.user_state = 2 and ub.user_id = ur.user_id and ur.role_id = r.role_id
+		ORDER BY ub.user_id DESC
+	</select>
+
+	<select id="selectIdsByParams" resultType="Integer">
+		SELECT a.user_id FROM tb_user_basic a 
+		WHERE a.user_state = 1
+		<!--<if test="user.loginId == '' and user.name == '' and user.nameYomi == '' and user.emailAddr == '' and hiredDateBegin == '' and hiredDateEnd == '' and user.userAppend.tel =='' and createdTimeBegin == '' and createdTimeEnd == ''">
+			AND 1 = 2
+		</if>-->
+		<if test="user.loginId != ''">
+            AND a.login_id LIKE CONCAT('%','${user.loginId,jdbcType=VARCHAR}','%' )
+        </if>
+        <if test="user.name != ''">
+            AND a.name LIKE CONCAT('%','${user.name,jdbcType=VARCHAR}','%' )
+        </if>
+        <if test="user.nameYomi != ''">
+            AND a.name_yomi LIKE CONCAT('%','${user.nameYomi,jdbcType=VARCHAR}','%' )
+        </if>
+        <if test="user.emailAddr != ''">
+            AND a.email_addr LIKE CONCAT('%','${user.emailAddr,jdbcType=VARCHAR}','%' )
+        </if>
+        <if test="user.userTel != ''">
+            AND a.tel LIKE CONCAT('%','${user.userTel,jdbcType=VARCHAR}','%' )
+        </if>
+        <!-- *************************************************************** -->
+		<if test="user.orgCode != ''">
+            AND a.ORG_CODE LIKE CONCAT('%','${user.orgCode,jdbcType=VARCHAR}','%' )
+        </if>
+        <if test="user.orgName != ''">
+            AND a.ORG_NAME LIKE CONCAT('%','${user.orgName,jdbcType=VARCHAR}','%' )
+        </if>
+	</select>
+	
+	<select id="selectByIds" resultMap="BaseResultMap" parameterType="Integer">
+		SELECT
+		ub.user_id, ub.login_id, ub.login_pwd, ub.name, ub.name_yomi, ub.email_addr, ub.user_state, ub.tel, ub.ORG_CODE, ub.ORG_NAME, ur.role_id, r.role_name
+		FROM tb_user_basic ub,tb_user_role ur,tb_role r
+		WHERE ub.user_state = 1  and ub.user_id = ur.user_id and ur.role_id = r.role_id 
+		and ub.user_id IN
+		<foreach collection="list" index="index" item="item" open="(" separator="," close=")">
+			#{item}
+		</foreach>
+		ORDER BY ub.user_id DESC
+	</select>
+	
+	<select id="selectBannedIdsByParams" resultType="Integer">
+		SELECT a.user_id FROM tb_user_basic a
+		WHERE a.user_state = 2 
+		<!--<if test="user.loginId == '' and user.name == '' and user.nameYomi == '' and user.emailAddr == '' and hiredDateBegin == '' and hiredDateEnd == '' and user.userAppend.tel =='' and createdTimeBegin == '' and createdTimeEnd == ''">
+            AND 1 = 2
+        </if>-->
+        <if test="user.loginId != ''">
+            AND a.login_id LIKE CONCAT('%','${user.loginId,jdbcType=VARCHAR}','%' )
+        </if>
+        <if test="user.name != ''">
+            AND a.name LIKE CONCAT('%','${user.name,jdbcType=VARCHAR}','%' )
+        </if>
+        <if test="user.nameYomi != ''">
+            AND a.name_yomi LIKE CONCAT('%','${user.nameYomi,jdbcType=VARCHAR}','%' )
+        </if>
+        <if test="user.emailAddr != ''">
+            AND a.email_addr LIKE CONCAT('%','${user.emailAddr,jdbcType=VARCHAR}','%' )
+        </if>
+        <if test="user.userTel != ''">
+            AND a.tel LIKE CONCAT('%','${user.userTel,jdbcType=VARCHAR}','%' )
+        </if>
+         <!-- *************************************************************** -->
+		<if test="user.orgCode != ''">
+            AND a.ORG_CODE LIKE CONCAT('%','${user.orgCode,jdbcType=VARCHAR}','%' )
+        </if>
+        <if test="user.orgName != ''">
+            AND a.ORG_NAME LIKE CONCAT('%','${user.orgName,jdbcType=VARCHAR}','%' )
+        </if>
+	</select>
+
+	<select id="selectBannedByIds" resultMap="BaseResultMap" parameterType="Integer">
+		SELECT
+		ub.user_id, ub.login_id, ub.login_pwd, ub.name, ub.name_yomi, ub.email_addr, ub.user_state,ub.tel, ub.ORG_CODE, ub.ORG_NAME, ur.role_id, r.role_name
+		FROM tb_user_basic ub,tb_user_role ur,tb_role r
+		WHERE ub.user_state = 2  and ub.user_id = ur.user_id and ur.role_id = r.role_id  AND ub.user_id IN
+		<foreach collection="list" index="index" item="item" open="(" separator="," close=")">
+			#{item}
+		</foreach>
+		ORDER BY ub.user_id DESC
+	</select>
+
+	<select id="selectByLoginId" resultMap="BaseResultMap" parameterType="cn.hnne.hs.model.user.UserBasic">
+		SELECT <include refid="Base_Column_List" />
+		FROM tb_user_basic
+		WHERE login_id = #{loginId,jdbcType=VARCHAR}
+	</select>
+
+	<select id="selectByLoginIdAndPwd" resultMap="BaseResultMap" parameterType="cn.hnne.hs.model.user.UserBasic">
+		SELECT <include refid="Base_Column_List" />
+		FROM tb_user_basic
+		WHERE (user_state = 1 or user_state = -1) AND login_id = #{loginId,jdbcType=VARCHAR} AND login_pwd = #{loginPwd,jdbcType=VARCHAR}
+	</select>
+
+	<select id="selectByEmailAddr" resultMap="BaseResultMap" parameterType="cn.hnne.hs.model.user.UserBasic">
+		SELECT <include refid="Base_Column_List" />
+		FROM tb_user_basic
+		WHERE email_addr = #{emailAddr,jdbcType=VARCHAR} AND user_state = 1
+	</select>
+	
+	<select id="selectActiveByParams" resultMap="BaseResultMap" parameterType="cn.hnne.hs.model.user.UserBasic" >
+		SELECT a.user_id, a.login_id, a.login_pwd, a.name, a.name_yomi, a.email_addr, a.user_state, a.tel, a.ORG_CODE, a.ORG_NAME, ur.role_id,r.role_name
+		FROM tb_user_basic a,tb_user_role ur,tb_role r
+		WHERE a.user_state = 1 and a.user_id = ur.user_id and ur.role_id = r.role_id 
+        <if test="loginId != '' and loginId != null">
+            AND a.login_id LIKE '%'||#{loginId,jdbcType=VARCHAR}||'%'
+        </if>
+        <if test="name != '' and name != null">
+            AND a.name LIKE '%'||#{name,jdbcType=VARCHAR}||'%'
+        </if>
+        <if test="nameYomi != '' and nameYomi != null">
+            AND a.name_yomi LIKE '%'||#{nameYomi,jdbcType=VARCHAR}||'%'
+        </if>
+        <if test="emailAddr != '' and emailAddr != null">
+            AND a.email_addr LIKE '%'||#{emailAddr,jdbcType=VARCHAR}||'%'
+        </if>
+        <if test="userTel != '' and userTel != null">
+            AND a.tel LIKE '%'||#{userTel,jdbcType=VARCHAR}||'%'
+        </if>
+        <if test="roleName != '' and roleName != null">
+            AND r.role_name LIKE '%'||#{roleName,jdbcType=VARCHAR}||'%'
+        </if>
+         <!-- *************************************************************** -->
+		<if test="orgCode != ''">
+            AND a.ORG_CODE LIKE '%'||#{orgCode,jdbcType=VARCHAR}||'%'
+        </if>
+        <if test="orgName != ''">
+            AND a.ORG_NAME LIKE '%'||#{orgName,jdbcType=VARCHAR}||'%'
+        </if>
+	 </select>
+	 
+	<select id="selectBannedByParams" resultMap="BaseResultMap" parameterType="cn.hnne.hs.model.user.UserBasic" >
+		SELECT a.user_id, a.login_id, a.login_pwd, a.name, a.name_yomi, a.email_addr, a.user_state, a.tel, a.ORG_CODE, a.ORG_NAME, ur.role_id,r.role_name
+		FROM tb_user_basic a,tb_user_role ur,tb_role r
+		WHERE a.user_state = 2 and a.user_id = ur.user_id and ur.role_id = r.role_id 
+        <if test="loginId != '' and loginId != null">
+            AND a.login_id LIKE '%'||#{loginId,jdbcType=VARCHAR}||'%'
+        </if>
+        <if test="name != '' and name != null">
+            AND a.name LIKE '%'||#{name,jdbcType=VARCHAR}||'%'
+        </if>
+        <if test="nameYomi != '' and nameYomi != null">
+            AND a.name_yomi LIKE '%'||#{nameYomi,jdbcType=VARCHAR}||'%'
+        </if>
+        <if test="emailAddr != '' and emailAddr != null">
+            AND a.email_addr LIKE '%'||#{emailAddr,jdbcType=VARCHAR}||'%'
+        </if>
+        <if test="userTel != '' and userTel != null">
+            AND a.tel LIKE '%'||#{userTel,jdbcType=VARCHAR}||'%'
+        </if>
+        <if test="roleName != '' and roleName != null">
+            AND r.role_name LIKE '%'||#{roleName,jdbcType=VARCHAR}||'%'
+        </if>
+        <!-- *************************************************************** -->
+		<if test="orgCode != ''">
+            AND a.ORG_CODE LIKE '%'||#{orgCode,jdbcType=VARCHAR}||'%'
+        </if>
+        <if test="orgName != ''">
+            AND a.ORG_NAME LIKE '%'||#{orgName,jdbcType=VARCHAR}||'%'
+        </if>
+	 </select>
+	
+</mapper>

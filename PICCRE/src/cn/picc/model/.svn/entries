@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   repos="https://192.168.1.100/svn/picchr"
+   name=""
+   revision="476"
+   last-author="tanlei"
+   url="https://192.168.1.100/svn/picchr/01_Workspace/04_SourceCode/trunk/PICCRE/src/cn/picc/model"
+   uuid="d558abd4-af74-fa4b-8ca2-01a2a0437fc6"
+   committed-rev="473"
+   kind="dir"
+   committed-date="2014-06-05T04:16:33.104000Z"/>
+<entry
+   name="Department.java"
+   checksum="e1c809f36208728223162ec7908f5294"
+   last-author="tanlei"
+   committed-rev="407"
+   text-time="2014-05-29T01:24:15.253000Z"
+   kind="file"
+   committed-date="2014-05-29T01:24:15.253000Z"/>
+<entry
+   name="DepartmentExample.java"
+   checksum="96c93eb0c06a90729aca980605f98136"
+   last-author="tanlei"
+   committed-rev="407"
+   text-time="2014-05-29T01:24:15.253000Z"
+   kind="file"
+   committed-date="2014-05-29T01:24:15.253000Z"/>
+<entry
+   name="Education.java"
+   checksum="edcc620ed173ab876f12b00c14acf56f"
+   last-author="tanlei"
+   committed-rev="433"
+   text-time="2014-05-30T09:30:14.831000Z"
+   kind="file"
+   committed-date="2014-05-30T09:30:14.831000Z"/>
+<entry
+   name="EducationExample.java"
+   checksum="0fdab417258f324d1e77d504ef3bd615"
+   last-author="tanlei"
+   committed-rev="407"
+   text-time="2014-05-29T01:24:15.253000Z"
+   kind="file"
+   committed-date="2014-05-29T01:24:15.253000Z"/>
+<entry
+   name="ExcelObject.java"
+   checksum="60f7d1d4068d702fe1354b91fd39a77c"
+   last-author="tanlei"
+   committed-rev="407"
+   text-time="2014-05-29T01:24:15.253000Z"
+   kind="file"
+   committed-date="2014-05-29T01:24:15.253000Z"/>
+<entry
+   name="Experience.java"
+   checksum="834b1095bda7addc83e4c16ea7af5bc7"
+   last-author="tanlei"
+   committed-rev="433"
+   text-time="2014-05-30T09:30:14.831000Z"
+   kind="file"
+   committed-date="2014-05-30T09:30:14.831000Z"/>
+<entry
+   name="ExperienceExample.java"
+   checksum="f70804dcdc76cf052c6d95b766f741d4"
+   last-author="tanlei"
+   committed-rev="407"
+   text-time="2014-05-29T01:24:15.253000Z"
+   kind="file"
+   committed-date="2014-05-29T01:24:15.253000Z"/>
+<entry
+   name="Family.java"
+   checksum="98aab3511eab97298e0836fed87aa702"
+   last-author="tanlei"
+   committed-rev="433"
+   text-time="2014-05-30T09:30:14.831000Z"
+   kind="file"
+   committed-date="2014-05-30T09:30:14.831000Z"/>
+<entry
+   name="FamilyExample.java"
+   checksum="5d73ecd1f66c439978e5e0d85ddedade"
+   last-author="tanlei"
+   committed-rev="407"
+   text-time="2014-05-29T01:24:15.253000Z"
+   kind="file"
+   committed-date="2014-05-29T01:24:15.253000Z"/>
+<entry
+   name="Login.java"
+   checksum="2a5be7add35cb5e15184010be1dd792e"
+   last-author="xiaochonggao"
+   committed-rev="432"
+   text-time="2014-05-30T09:28:05.673000Z"
+   kind="file"
+   committed-date="2014-05-30T09:28:05.673000Z"/>
+<entry
+   name="LoginExample.java"
+   checksum="7118409d4ded162ebaff57c743995fd9"
+   last-author="xiaochonggao"
+   committed-rev="428"
+   text-time="2014-05-30T01:12:31.108000Z"
+   kind="file"
+   committed-date="2014-05-30T01:12:31.108000Z"/>
+<entry
+   name="Organization.java"
+   checksum="8eed49823ad4848070f28b3e59a572ec"
+   last-author="tanlei"
+   committed-rev="407"
+   text-time="2014-05-29T01:24:15.253000Z"
+   kind="file"
+   committed-date="2014-05-29T01:24:15.253000Z"/>
+<entry
+   name="OrganizationExample.java"
+   checksum="ba2de8419673342694b5601cd81ab006"
+   last-author="tanlei"
+   committed-rev="407"
+   text-time="2014-05-29T01:24:15.253000Z"
+   kind="file"
+   committed-date="2014-05-29T01:24:15.253000Z"/>
+<entry
+   name="Position.java"
+   checksum="d837dd127fc24c04bed2a47e3305c980"
+   last-author="tanlei"
+   committed-rev="407"
+   text-time="2014-05-29T01:24:15.253000Z"
+   kind="file"
+   committed-date="2014-05-29T01:24:15.253000Z"/>
+<entry
+   name="PositionExample.java"
+   checksum="26f126f83aacf06b3af347f64a136838"
+   last-author="tanlei"
+   committed-rev="407"
+   text-time="2014-05-29T01:24:15.253000Z"
+   kind="file"
+   committed-date="2014-05-29T01:24:15.253000Z"/>
+<entry
+   name="Recruitment.java"
+   checksum="18b313c4dd4396ae00ef2f04a2c9e96c"
+   last-author="xiaochonggao"
+   committed-rev="454"
+   text-time="2014-06-03T15:32:12.443000Z"
+   kind="file"
+   committed-date="2014-06-03T15:32:12.443000Z"/>
+<entry
+   name="RecruitmentDetail.java"
+   checksum="e6ff8e439873fc68b65dfb30febe0d82"
+   last-author="xiaochonggao"
+   committed-rev="422"
+   text-time="2014-05-29T07:19:25.357000Z"
+   kind="file"
+   committed-date="2014-05-29T07:19:25.357000Z"/>
+<entry
+   name="RecruitmentDetailExample.java"
+   checksum="d7dde54ae24eb564c521857e7765ccce"
+   last-author="tanlei"
+   committed-rev="412"
+   text-time="2014-05-29T02:24:18.530000Z"
+   kind="file"
+   committed-date="2014-05-29T02:24:18.530000Z"/>
+<entry
+   name="RecruitmentExample.java"
+   checksum="7eb554b1c5b5c0a51958f3a3b8d4a7e2"
+   last-author="tanlei"
+   committed-rev="407"
+   text-time="2014-05-29T01:24:15.253000Z"
+   kind="file"
+   committed-date="2014-05-29T01:24:15.253000Z"/>
+<entry
+   name="Reward.java"
+   checksum="f17000cbbfe3e84b7f16e59a1f0280c3"
+   last-author="tanlei"
+   committed-rev="473"
+   text-time="2014-06-05T01:46:38.490000Z"
+   kind="file"
+   committed-date="2014-06-05T04:16:33.104000Z"/>
+<entry
+   name="RewardExample.java"
+   checksum="0cd141ed50e968cbffd198bb1a0844d4"
+   last-author="tanlei"
+   committed-rev="407"
+   text-time="2014-05-29T01:24:15.253000Z"
+   kind="file"
+   committed-date="2014-05-29T01:24:15.253000Z"/>
+<entry
+   name="Technical.java"
+   checksum="379b6b5ded4f248edbf5f73b68bdc17d"
+   last-author="tanlei"
+   committed-rev="407"
+   text-time="2014-05-29T01:24:15.253000Z"
+   kind="file"
+   committed-date="2014-05-29T01:24:15.253000Z"/>
+<entry
+   name="TechnicalExample.java"
+   checksum="0c603c323934988bb6b27b6ee4b09623"
+   last-author="tanlei"
+   committed-rev="407"
+   text-time="2014-05-29T01:24:15.253000Z"
+   kind="file"
+   committed-date="2014-05-29T01:24:15.253000Z"/>
+<entry
+   name="User.java"
+   revision="478"
+   checksum="910a58fa03802f41443dfcbd8bcd2307"
+   last-author="tanlei"
+   committed-rev="478"
+   text-time="2014-06-05T04:35:09.229000Z"
+   kind="file"
+   committed-date="2014-06-05T04:37:56.854000Z"/>
+<entry
+   name="UserExample.java"
+   revision="480"
+   checksum="2736b4b1267202b461211eae67594afa"
+   last-author="tanlei"
+   text-time="2014-06-05T04:35:09.271000Z"
+   committed-rev="480"
+   kind="file"
+   committed-date="2014-06-05T04:38:41.111000Z"/>
+</wc-entries>

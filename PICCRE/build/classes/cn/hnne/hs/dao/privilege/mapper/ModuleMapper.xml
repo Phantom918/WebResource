@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="cn.hnne.hs.dao.privilege.ModuleMapper">
+
+	<resultMap type="Module" id="userModule">
+		<id property="moduleId" column="MODULE_ID" />
+		<result property="moduleName" column="MODULE_NAME" jdbcType="VARCHAR"/>
+		<result property="modulePrivilegeCode" column="MODULE_PRIVILEGE_CODE" jdbcType="NUMERIC"/>
+		<result property="moduleAction" column="PRIVILEGE_ACTION" jdbcType="VARCHAR"/>
+		<result property="parentId" column="PARENT_ID" jdbcType="NUMERIC"/>
+		<result property="moduleLayer" column="MODULE_LAYER" jdbcType="NUMERIC"/>
+	</resultMap>
+	
+	<resultMap type="Module" id="modules">
+		<id property="moduleId" column="MODULE_ID" jdbcType="NUMERIC"/>
+		<result property="moduleName" column="MODULE_NAME" jdbcType="VARCHAR"/>
+		<result property="parentId" column="PARENT_ID" jdbcType="INTEGER"/>
+		<result property="moduleLayer" column="MODULE_LAYER" jdbcType="INTEGER"/>
+	</resultMap>
+	
+	<select id="getModules" resultMap="userModule">
+		SELECT MODULE_ID, MODULE_NAME, MODULE_PRIVILEGE_CODE, PRIVILEGE_ACTION, PARENT_ID, COUNT(DISTINCT MODULE_ID)
+		FROM VW_USER_ALL_MODULE
+		WHERE USER_ID = #{0} AND (ROLE_ID = #{1} OR ROLE_ID = '')
+		GROUP BY MODULE_ID
+		ORDER BY MODULE_ID
+	</select>
+	
+	<select id="getUserModules" resultMap="userModule">
+		SELECT MODULE_ID, MODULE_NAME, MODULE_PRIVILEGE_CODE, PRIVILEGE_ACTION, PARENT_ID
+		FROM VW_USER_MODULE
+		WHERE USER_ID = #{0}
+		ORDER BY MODULE_ID
+	</select>
+	
+	<select id="getRoleModules" resultMap="userModule">
+		SELECT MODULE_ID, MODULE_NAME, MODULE_PRIVILEGE_CODE, PRIVILEGE_ACTION, PARENT_ID
+		FROM VW_USER_ROLE_MODULE
+		WHERE USER_ID = #{0}
+		ORDER BY MODULE_ID
+	</select>
+	
+	<select id="getGroupModules" resultMap="userModule">
+		SELECT MODULE_ID, MODULE_NAME, MODULE_PRIVILEGE_CODE, PRIVILEGE_ACTION, PARENT_ID
+		FROM VW_USER_GROUP_MODULE
+		WHERE USER_ID = #{0}
+		ORDER BY MODULE_ID
+	</select>
+	
+	<select id="getAllModules" resultMap="userModule">
+		SELECT m.*,privilege_action
+		FROM TB_MODULE m LEFT JOIN tb_privilege p
+		on m.module_id = p.module_id AND p.privilege_code = 1
+	</select>
+	<!-- 查询所有的模块 -->
+	<select id="findModules" resultMap="modules">
+		SELECT MODULE_ID,MODULE_NAME,PARENT_ID,MODULE_LAYER FROM TB_MODULE
+	</select>
+	<!-- 根据父Id查询模块信息 -->
+	<select id="findByParentId" resultMap="modules" parameterType="int">
+		SELECT MODULE_ID,MODULE_NAME,PARENT_ID,MODULE_LAYER FROM TB_MODULE
+		<where>
+			<choose>
+				<when test="_parameter == null">
+					PARENT_ID IS NULL
+				</when>
+				<otherwise>
+					PARENT_ID = #{_parameter}	
+				</otherwise>
+			</choose>
+		</where>
+	</select>
+	<!-- 根据模块编号查询模块信息 -->
+	<select id="findModuleById" resultMap="modules" parameterType="int">
+		SELECT MODULE_ID,MODULE_NAME,PARENT_ID,MODULE_LAYER FROM TB_MODULE WHERE MODULE_ID=#{moduleId}
+	</select>
+	<!-- 添加模块 -->
+	<insert id="add" parameterType="Module" >
+	    INSERT INTO TB_MODULE (MODULE_ID,PARENT_ID,MODULE_NAME,MODULE_LAYER)
+		VALUES ((MODULE_SEQ.nextval),#{parentId,jdbcType=NUMERIC},#{moduleName,jdbcType=VARCHAR},#{moduleLayer,jdbcType=NUMERIC})
+	</insert>
+	<!-- 删除模块 -->
+	<delete id="delete" parameterType="int">
+		DELETE FROM TB_MODULE WHERE MODULE_ID = #{id}
+	</delete>
+	<!-- 修改模块 -->
+	<update id="update" parameterType="Module">
+		UPDATE TB_MODULE SET
+	    	MODULE_NAME = #{moduleName,jdbcType=VARCHAR},
+	    	MODULE_LAYER = #{moduleLayer,jdbcType=NUMERIC}
+		WHERE MODULE_ID = #{moduleId,jdbcType=NUMERIC}
+	</update>
+	<!-- 批量删除模块 -->
+	<delete id="deleteList" parameterType="java.util.List">
+		DELETE FROM TB_MODULE
+		<foreach item="moduleIds" collection="list" open=" WHERE " separator=" OR " close="">
+			MODULE_ID = #{ids,jdbcType=NUMERIC}
+		</foreach>
+	</delete>
+	
+	<!-- ******************查询模块信息*******************select id="findAllModule"是要调用的方法名 -->
+	<resultMap id="moduleMessage" type="Module">
+		<id property="moduleId" column="MODULE_ID" />
+		<result property="moduleName" column="MODULE_NAME" />
+		<result property="parentId" column="PARENT_ID" />
+		<result property="moduleLayer"/>
+		<collection property="privileges" column="MODULE_ID" select="findPrivileges" /><!-- 一对多的情况 -->
+	</resultMap>
+	
+	<select id="findAll" resultMap="moduleMessage">
+		select  t.MODULE_ID,t.MODULE_NAME,t.PARENT_ID,t.MODULE_LAYER from tb_module t
+	</select>
+	
+	
+	<!-- *****************查询对应模块的权限**************** -->
+	<select id="findPrivileges" resultMap="Privileges">
+		select t.PRIVILEGE_ID,t.PRIVILEGE_CODE,t.PRIVILEGE_NAME,t.PRIVILEGE_ACTION  from tb_privilege t where t.MODULE_ID = #{MODULE_ID}
+	</select>
+	
+	<resultMap id="Privileges" type="Privilege">
+		<id column="PRIVILEGE_ID" property="privilegeId" />
+		<result column="PRIVILEGE_CODE" property="privilegeCode"/>
+		<result column="PRIVILEGE_NAME" property="privilegeName"/>
+		<result column="PRIVILEGE_ACTION" property="privilegeAction"/> 
+	</resultMap>
+	
+	
+	<!-- *****************查询用户对应的模块,以及对应模块下的权限**************** -->
+	<select id="findSomeoneModulePrivilegesCode" resultMap="moduleMessage1">
+		select m.MODULE_ID,m.MODULE_NAME,m.MODULE_PRIVILEGE_CODE from vw_subject_module5 m WHERE m.SUBJECT_TYPE=#{0} AND m.SUBJECT_VALUE=#{1}
+	</select>
+	<resultMap id="moduleMessage1" type="Module">
+		<id property="moduleId" column="MODULE_ID" />
+		<result property="moduleName" column="MODULE_NAME" />
+		<result property="modulePrivilegeCode" column="MODULE_PRIVILEGE_CODE" />
+	</resultMap>
+	
+</mapper>

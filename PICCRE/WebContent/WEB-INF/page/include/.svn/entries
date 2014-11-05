@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   repos="https://192.168.1.100/svn/picchr"
+   name=""
+   revision="469"
+   last-author="tanlei"
+   url="https://192.168.1.100/svn/picchr/01_Workspace/04_SourceCode/trunk/PICCRE/WebContent/WEB-INF/page/include"
+   uuid="d558abd4-af74-fa4b-8ca2-01a2a0437fc6"
+   committed-rev="417"
+   kind="dir"
+   committed-date="2014-05-29T03:44:09.140000Z"/>
+<entry
+   name="header.jsp"
+   checksum="ba92e18e6851272bc9c45c001b6277ad"
+   last-author="tanlei"
+   committed-rev="407"
+   text-time="2014-05-29T01:24:15.253000Z"
+   kind="file"
+   committed-date="2014-05-29T01:24:15.253000Z"/>
+<entry
+   name="importCSS.jsp"
+   checksum="6f1ad38db217926a476af20a0d544f24"
+   last-author="tanlei"
+   committed-rev="417"
+   text-time="2014-05-29T03:44:09.140000Z"
+   kind="file"
+   committed-date="2014-05-29T03:44:09.140000Z"/>
+<entry
+   name="importJS.jsp"
+   checksum="bbdbb935b668ff9ece0d7241ad29300b"
+   last-author="tanlei"
+   committed-rev="417"
+   text-time="2014-05-29T03:44:09.140000Z"
+   kind="file"
+   committed-date="2014-05-29T03:44:09.140000Z"/>
+<entry
+   name="menubar.jsp"
+   checksum="551a7c2bd046884c52767fcfccdd7cec"
+   last-author="tanlei"
+   committed-rev="407"
+   text-time="2014-05-29T01:24:15.253000Z"
+   kind="file"
+   committed-date="2014-05-29T01:24:15.253000Z"/>
+<entry
+   name="modal-tips.jsp"
+   checksum="5370a11918d7e1cf086a9027cfb18e86"
+   last-author="tanlei"
+   committed-rev="407"
+   text-time="2014-05-29T01:24:15.253000Z"
+   kind="file"
+   committed-date="2014-05-29T01:24:15.253000Z"/>
+</wc-entries>

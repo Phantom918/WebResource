@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   name=""
+   repos="https://192.168.1.100/svn/picchr"
+   revision="476"
+   last-author="tanlei"
+   uuid="d558abd4-af74-fa4b-8ca2-01a2a0437fc6"
+   url="https://192.168.1.100/svn/picchr/01_Workspace/04_SourceCode/trunk/PICCRE/src/cn/hnne/hs/web/action/user"
+   committed-rev="407"
+   kind="dir"
+   committed-date="2014-05-29T01:24:15.253000Z"/>
+<entry
+   name="UserAction.java"
+   checksum="72dd0101f4fdf8517ca9b6bed0a82c0e"
+   last-author="tanlei"
+   text-time="2014-05-29T01:24:15.253000Z"
+   committed-rev="407"
+   kind="file"
+   committed-date="2014-05-29T01:24:15.253000Z"/>
+</wc-entries>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   repos="https://192.168.1.100/svn/picchr"
+   name=""
+   revision="469"
+   last-author="tanlei"
+   url="https://192.168.1.100/svn/picchr/01_Workspace/04_SourceCode/trunk/PICCRE/src/cn/hnne/hs/dao/privilege"
+   uuid="d558abd4-af74-fa4b-8ca2-01a2a0437fc6"
+   committed-rev="407"
+   kind="dir"
+   committed-date="2014-05-29T01:24:15.253000Z"/>
+<entry
+   name="GroupMapper.java"
+   checksum="9d0ce26829eac3c8956f51a4ccef915f"
+   last-author="tanlei"
+   committed-rev="407"
+   text-time="2014-05-29T01:24:15.253000Z"
+   kind="file"
+   committed-date="2014-05-29T01:24:15.253000Z"/>
+<entry
+   name="ModuleMapper.java"
+   checksum="cbb7d76525ea29773baacd0a6f6e7f25"
+   last-author="tanlei"
+   committed-rev="407"
+   text-time="2014-05-29T01:24:15.253000Z"
+   kind="file"
+   committed-date="2014-05-29T01:24:15.253000Z"/>
+<entry
+   name="PrivilegeMapper.java"
+   checksum="70529f75155cee8291e845338630dd08"
+   last-author="tanlei"
+   committed-rev="407"
+   text-time="2014-05-29T01:24:15.253000Z"
+   kind="file"
+   committed-date="2014-05-29T01:24:15.253000Z"/>
+<entry
+   name="RoleMapper.java"
+   checksum="8c1f54e5a3196dcda7cd5be6b45c49ef"
+   last-author="tanlei"
+   committed-rev="407"
+   text-time="2014-05-29T01:24:15.253000Z"
+   kind="file"
+   committed-date="2014-05-29T01:24:15.253000Z"/>
+<entry
+   name="mapper"
+   kind="dir"/>
+</wc-entries>

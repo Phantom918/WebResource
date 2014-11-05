@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="cn.hnne.hs.dao.privilege.RoleMapper">
+
+	<resultMap type="Role" id="roles">
+		<id property="roleId" column="ROLE_ID"/>
+		<result property="roleName" column="ROLE_NAME" jdbcType="VARCHAR"/>
+		<result property="roleDescribe" column="ROLE_DESCRIBE" jdbcType="VARCHAR"/>
+	</resultMap>
+	
+	<resultMap id="baseResultMap" type="UserBasic">
+		<id column="USER_ID" property="userId" jdbcType="NUMERIC"/>
+		<result column="LOGIN_ID" property="loginId" jdbcType="VARCHAR"/>
+		<result column="LOGIN_PWD" property="loginPwd" jdbcType="VARCHAR" />
+		<result column="NAME" property="name" jdbcType="VARCHAR" />
+		<result column="NAME_YOMI" property="nameYomi" jdbcType="VARCHAR"/>
+		<result column="EMAIL_ADDR" property="emailAddr" jdbcType="VARCHAR" />
+		<result column="USER_STATE" property="userState" jdbcType="NUMERIC"/>
+	</resultMap>
+	
+	<resultMap id="BaseResultMap" type="cn.hnne.hs.model.user.UserBasic">
+		<id column="user_id" property="userId" jdbcType="NUMERIC"/>
+		<result column="login_id" property="loginId" jdbcType="VARCHAR"/>
+		<result column="login_pwd" property="loginPwd" jdbcType="VARCHAR" />
+		<result column="name" property="name"  jdbcType="VARCHAR"/>
+		<result column="name_yomi" property="nameYomi" jdbcType="VARCHAR"/>
+		<result column="email_addr" property="emailAddr" jdbcType="VARCHAR" />
+		<result column="user_state" property="userState" jdbcType="NUMERIC" />
+	</resultMap>
+
+	<insert id="add" parameterType="Role">
+		INSERT INTO TB_ROLE (ROLE_ID,ROLE_NAME,ROLE_DESCRIBE)
+		VALUES ((ROLE_SEQ.nextval),#{roleName,jdbcType=VARCHAR},#{roleDescribe,jdbcType=VARCHAR})
+	</insert>
+	
+	<delete id="delete" parameterType="int">
+		DELETE FROM TB_ROLE WHERE ROLE_ID = #{id,jdbcType=NUMERIC}
+	</delete>
+	
+	<delete id="deleteList" parameterType="java.util.List">
+		DELETE FROM TB_ROLE
+		<foreach item="ids" collection="list" open=" WHERE " separator=" OR " close="">
+			ROLE_ID = #{ids}
+		</foreach>
+	</delete>
+	
+	<insert id="assign" parameterType="java.util.Map">
+		INSERT INTO TB_USER_ROLE (USER_ID, ROLE_ID) VALUES
+		<foreach collection="userIds" item="item" separator=",">
+			(#{item,jdbcType=NUMERIC},#{roleId,jdbcType=NUMERIC})
+		</foreach>
+	</insert>
+	
+	<!-- <insert id="addUserRole" parameterType="Role">
+		INSERT INTO TB_ROLE (ROLE_ID,ROLE_NAME,ROLE_DESCRIBE)
+		VALUES ((ROLE_SEQ.nextval),#{roleName,jdbcType=VARCHAR},#{roleDescribe,jdbcType=VARCHAR})
+	</insert> -->
+	
+	<delete id="disassign" parameterType="java.util.Map">
+		DELETE FROM TB_USER_ROLE WHERE ROLE_ID = #{roleId} AND
+		<foreach item="item" collection="userIds" open="(" separator=" OR " close=")">
+			USER_ID = #{item,jdbcType=NUMERIC}
+		</foreach>
+	</delete>
+	
+	<update id="update" parameterType="Role">
+		UPDATE TB_ROLE SET
+	    	ROLE_NAME = #{roleName},
+	    	ROLE_DESCRIBE = #{roleDescribe}
+		WHERE ROLE_ID = #{roleId,jdbcType=NUMERIC}
+	</update>
+	
+	<update id="updateUR" parameterType="java.util.Map">
+		UPDATE TB_USER_ROLE SET
+	    	ROLE_ID = #{roleId,jdbcType=NUMERIC}
+		WHERE USER_ID = #{userId,jdbcType=NUMERIC}
+	</update>
+	
+	<select id="findAll" resultMap="roles">
+		SELECT ROLE_ID, ROLE_NAME, ROLE_DESCRIBE FROM TB_ROLE
+	</select>
+	
+	<select id="findUsersByRoleByPage" parameterType="int" resultMap="baseResultMap">
+		SELECT UB.*
+		FROM TB_USER_ROLE UR JOIN TB_USER_BASIC UB
+		ON UR.USER_ID = UB.USER_ID
+		WHERE UR.ROLE_ID = #{roleId} AND UB.USER_STATE = 1
+	</select>
+	
+	<!-- 根据角色查询用户集合 -->
+	<select id="findUsersByRole" parameterType="int" resultMap="BaseResultMap">
+		SELECT UB.USER_ID, UB.LOGIN_ID, UB.LOGIN_PWD, UB.NAME, UB.NAME_YOMI, UB.EMAIL_ADDR, UB.USER_STATE
+		FROM TB_USER_ROLE UR, TB_USER_BASIC UB
+		WHERE UR.ROLE_ID=#{ROLEID} AND UR.USER_ID=UB.USER_ID AND UB.USER_STATE=1
+	</select>
+	
+	<select id="findUsersByNoRole" parameterType="int" resultMap="baseResultMap">
+		SELECT *
+		FROM TB_USER_BASIC 
+		WHERE USER_ID NOT IN (
+			SELECT UB.USER_ID
+			FROM TB_USER_ROLE UR JOIN TB_USER_BASIC UB
+			ON UR.USER_ID = UB.USER_ID
+			WHERE UR.ROLE_ID = #{roleId}
+		)
+		AND USER_STATE = 1
+	</select>
+	
+	<select id="findById" parameterType="int" resultMap="roles">
+		SELECT ROLE_ID, ROLE_NAME, ROLE_DESCRIBE FROM TB_ROLE
+		WHERE ROLE_ID = #{id}
+	</select>
+	<!-- ************查出所有角色信息*************** -->
+	<select id="findAllRole" resultMap="roleMessage">
+		select tr.ROLE_ID,tr.ROLE_NAME,tr.ROLE_DESCRIBE from tb_role tr
+	</select>
+	
+	<resultMap id="roleMessage" type="Role">
+		<id column="ROLE_ID" property="roleId" />
+		<result column="ROLE_NAME" property="roleName"/>
+		<result column="ROLE_DESCRIBE" property="roleDescribe"/>
+	</resultMap>
+	
+	<!-- 级联删除 -->
+	<delete id="deleteUserRole" parameterType="java.util.List">
+		DELETE FROM TB_USER_ROLE
+		<where>
+			<foreach item="item" collection="list" separator="OR">
+				ROLE_ID = #{item,jdbcType=NUMERIC}
+			</foreach>
+		</where>
+	</delete>
+	
+	<delete id="deleteRolePrivilege" parameterType="java.util.List">
+		DELETE FROM TB_SUBJECT_PRIVILEGE WHERE SUBJECT_TYPE = 2
+		<foreach item="item" collection="list" open="AND (" separator="OR" close=")">
+			SUBJECT_VALUE = #{item,jdbcType=NUMERIC}
+		</foreach>
+	</delete>
+	<!-- 根据角色名查询出角色编号 -->
+	<select id="selectIdByRoleName" parameterType="String" resultType="Integer">
+		select ROLE_ID from tb_role where ROLE_NAME = #{roleName}
+	</select>
+	<select id="findByUserId" resultMap="roles">
+		select r.* from tb_user_role ur, tb_role r
+		where ur.role_id = r.role_id and ur.user_id = #{userId}
+	</select>
+	
+	
+	
+	<resultMap id="AppendResultMap" type="cn.hnne.hs.model.user.UserBasic">
+		<id column="user_id" property="userId" />
+		<result column="login_id" property="loginId" />
+		<result column="login_pwd" property="loginPwd"  />
+		<result column="name" property="name"  />
+		<result column="name_yomi" property="nameYomi"  />
+		<result column="email_addr" property="emailAddr" />
+		<result column="user_state" property="userState" />
+	</resultMap>
+	<!-- 根据角色查询用户所有信息 -->
+	<select id="findUserApendsByRole" parameterType="int" resultMap="AppendResultMap">
+		SELECT UB.*,UA.*
+		FROM TB_USER_ROLE UR , TB_USER_BASIC UB
+		WHERE UR.ROLE_ID = #{roleId} AND UB.USER_STATE = 1 AND UR.USER_ID = UB.USER_ID 
+	</select>
+	<!-- 根据角色查询用户所有信息 -->
+	<select id="findUserApendsByRoleOnName" parameterType="java.util.Map" resultMap="AppendResultMap">
+		SELECT UB.*,UA.*
+		FROM TB_USER_ROLE UR , TB_USER_BASIC UB
+		WHERE UR.ROLE_ID = #{roleId} AND UB.USER_STATE = 1 AND UR.USER_ID = UB.USER_ID 
+		AND UB.`name` like CONCAT('%',${name},'%')
+	</select>
+	
+</mapper>

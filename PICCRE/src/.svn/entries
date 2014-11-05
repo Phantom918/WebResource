@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   repos="https://192.168.1.100/svn/picchr"
+   name=""
+   revision="469"
+   last-author="xiaochonggao"
+   url="https://192.168.1.100/svn/picchr/01_Workspace/04_SourceCode/trunk/PICCRE/src"
+   uuid="d558abd4-af74-fa4b-8ca2-01a2a0437fc6"
+   committed-rev="467"
+   kind="dir"
+   committed-date="2014-06-04T08:25:24.974000Z"/>
+<entry
+   name="MyBatisConfiguration.xml"
+   checksum="ed5344ce4a8894149ea1cb53e0bf732e"
+   last-author="tanlei"
+   committed-rev="407"
+   text-time="2014-05-29T01:24:15.253000Z"
+   kind="file"
+   committed-date="2014-05-29T01:24:15.253000Z"/>
+<entry
+   name="applicationContext.xml"
+   checksum="6d139ced3db9aceea229190dd0850f3c"
+   last-author="tanlei"
+   committed-rev="408"
+   text-time="2014-05-29T01:55:00.068000Z"
+   kind="file"
+   committed-date="2014-05-29T01:55:00.068000Z"/>
+<entry
+   name="cn"
+   kind="dir"/>
+<entry
+   name="generatorConfig.xml"
+   checksum="d654855cbb2d7805e2cf053e2b2a89bc"
+   last-author="tanlei"
+   committed-rev="411"
+   text-time="2014-05-29T02:23:48.749000Z"
+   kind="file"
+   committed-date="2014-05-29T02:23:48.749000Z"/>
+<entry
+   name="generatorOracleConfig.properties"
+   checksum="850fce4ffa36e3337d63a104db988ae8"
+   last-author="tanlei"
+   committed-rev="407"
+   text-time="2014-05-29T01:24:15.253000Z"
+   kind="file"
+   committed-date="2014-05-29T01:24:15.253000Z"/>
+<entry
+   name="log4j.properties"
+   checksum="3e9dcd1bd943c8556fb1a6a2443f21b8"
+   last-author="tanlei"
+   committed-rev="407"
+   text-time="2014-05-29T01:24:15.253000Z"
+   kind="file"
+   committed-date="2014-05-29T01:24:15.253000Z"/>
+<entry
+   name="struts.xml"
+   checksum="d7f73c95cc57faaa84cb6610188abec3"
+   last-author="tanlei"
+   committed-rev="447"
+   text-time="2014-06-03T13:17:57.489000Z"
+   kind="file"
+   committed-date="2014-06-03T13:17:57.489000Z"/>
+</wc-entries>

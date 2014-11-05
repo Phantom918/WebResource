@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   repos="https://192.168.1.100/svn/picchr"
+   name=""
+   revision="469"
+   last-author="tanlei"
+   url="https://192.168.1.100/svn/picchr/01_Workspace/04_SourceCode/trunk/PICCRE/WebContent/img"
+   uuid="d558abd4-af74-fa4b-8ca2-01a2a0437fc6"
+   committed-rev="418"
+   kind="dir"
+   committed-date="2014-05-29T03:44:21.740000Z"/>
+<entry
+   name="PICC_icon.png"
+   checksum="61c9ccd10197e8f54528d5a4b7597083"
+   last-author="tanlei"
+   committed-rev="407"
+   text-time="2014-05-29T01:24:15.253000Z"
+   kind="file"
+   committed-date="2014-05-29T01:24:15.253000Z"
+   prop-time="2014-06-04T12:31:19.237000Z"/>
+<entry
+   name="bg1.jpg"
+   checksum="62d2a3a3bc75721a5e34fe5a87197e52"
+   last-author="tanlei"
+   committed-rev="407"
+   text-time="2014-05-29T01:24:15.253000Z"
+   kind="file"
+   committed-date="2014-05-29T01:24:15.253000Z"
+   prop-time="2014-06-04T12:31:19.150000Z"/>
+<entry
+   name="h1.jpg"
+   checksum="754bfd7fc6e30c9208b91b1cca8517cf"
+   last-author="tanlei"
+   committed-rev="407"
+   text-time="2014-05-29T01:24:15.253000Z"
+   kind="file"
+   committed-date="2014-05-29T01:24:15.253000Z"
+   prop-time="2014-06-04T12:31:19.134000Z"/>
+<entry
+   name="h2.jpg"
+   checksum="583f6f010b4428618e91e5958ebb80c5"
+   last-author="tanlei"
+   committed-rev="407"
+   text-time="2014-05-29T01:24:15.253000Z"
+   kind="file"
+   committed-date="2014-05-29T01:24:15.253000Z"
+   prop-time="2014-06-04T12:31:19.222000Z"/>
+<entry
+   name="h3.jpg"
+   checksum="0f15d09bba4f0965ae46d6a5e415f3bd"
+   last-author="tanlei"
+   committed-rev="407"
+   text-time="2014-05-29T01:24:15.253000Z"
+   kind="file"
+   committed-date="2014-05-29T01:24:15.253000Z"
+   prop-time="2014-06-04T12:31:19.280000Z"/>
+<entry
+   name="h4.jpg"
+   checksum="247a86070bd9da0ecc088287c0297abd"
+   last-author="tanlei"
+   committed-rev="407"
+   text-time="2014-05-29T01:24:15.253000Z"
+   kind="file"
+   committed-date="2014-05-29T01:24:15.253000Z"
+   prop-time="2014-06-04T12:31:19.335000Z"/>
+<entry
+   name="picc_logo_s.png"
+   checksum="922c31c989ec70a678a7310bc875f35d"
+   last-author="tanlei"
+   committed-rev="407"
+   text-time="2014-05-29T01:24:15.253000Z"
+   kind="file"
+   committed-date="2014-05-29T01:24:15.253000Z"
+   prop-time="2014-06-04T12:31:19.048000Z"/>
+<entry
+   name="syncfusion-icons-white.png"
+   checksum="354084276176981b1c9001586877f98f"
+   last-author="tanlei"
+   committed-rev="418"
+   text-time="2014-05-29T03:44:21.740000Z"
+   kind="file"
+   committed-date="2014-05-29T03:44:21.740000Z"
+   prop-time="2014-06-04T12:31:19.347000Z"/>
+<entry
+   name="syncfusion-icons.png"
+   checksum="042b2172459539442e792a53325706e8"
+   last-author="tanlei"
+   committed-rev="418"
+   text-time="2014-05-29T03:44:21.740000Z"
+   kind="file"
+   committed-date="2014-05-29T03:44:21.740000Z"
+   prop-time="2014-06-04T12:31:19.360000Z"/>
+</wc-entries>

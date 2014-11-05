@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="cn.hnne.hs.dao.privilege.GroupMapper">
+
+	<resultMap type="Group" id="groups">
+		<id property="groupId" column="GROUP_ID" />
+		<result property="groupName" column="GROUP_NAME" jdbcType="VARCHAR"/>
+		<result property="groupDescribe" column="GROUP_DESCRIBE" jdbcType="VARCHAR" />
+		<result property="groupLayer" column="GROUP_LAYER" jdbcType="NUMERIC"/>
+		<result property="parentId" column="PARENT_ID" jdbcType="NUMERIC"/>
+	</resultMap>
+	
+	<resultMap id="baseResultMap" type="UserBasic">
+		<id column="USER_ID" property="userId"  />
+		<result column="LOGIN_ID" property="loginId" jdbcType="NUMERIC" />
+		<result column="LOGIN_PWD" property="loginPwd" jdbcType="VARCHAR"/>
+		<result column="NAME" property="name" jdbcType="VARCHAR"/>
+		<result column="NAME_YOMI" property="nameYomi" jdbcType="VARCHAR"/>
+		<result column="EMAIL_ADDR" property="emailAddr" jdbcType="VARCHAR"/>
+		<result column="USER_STATE" property="userState" jdbcType="NUMERIC"/>
+	</resultMap>
+	<sql id="selectProdSQL">
+       GROUP_ID,GROUP_NAME,GROUP_DESCRIBE,PARENT_ID,GROUP_LAYER
+    </sql>
+	<insert id="add" parameterType="Group">
+		INSERT INTO TB_GROUP (GROUP_ID,GROUP_NAME,GROUP_DESCRIBE,PARENT_ID,GROUP_LAYER)
+		VALUES ((GROUP_SEQ.nextval),#{groupName,jdbcType=VARCHAR},#{groupDescribe,jdbcType=VARCHAR},#{parentId,jdbcType=NUMERIC},#{groupLayer,jdbcType=NUMERIC})
+	</insert>
+	
+	<delete id="delete" parameterType="int">
+		DELETE FROM TB_GROUP WHERE GROUP_ID = #{id}
+	</delete>
+	
+	<delete id="deleteList" parameterType="java.util.List">
+		DELETE FROM TB_GROUP
+		<foreach item="ids" collection="list" open=" WHERE " separator=" OR " close="">
+			GROUP_ID = #{ids}
+		</foreach>
+	</delete>
+	
+	<insert id="assign" parameterType="java.util.Map">
+		INSERT INTO TB_USER_Group (USER_ID, GROUP_ID) VALUES
+		<foreach collection="userIds" item="item" separator=",">
+			(#{item,jdbcType=NUMERIC},#{groupId,jdbcType=NUMERIC})
+		</foreach>
+	</insert>
+	
+	<delete id="disassign" parameterType="java.util.Map">
+		DELETE FROM TB_USER_Group WHERE GROUP_ID = #{groupId} AND
+		<foreach item="item" collection="userIds" open="(" separator=" OR " close=")">
+			USER_ID = #{item,jdbcType=NUMERIC}
+		</foreach>
+	</delete>
+	
+	<update id="update" parameterType="Group">
+		UPDATE TB_GROUP SET
+	    	GROUP_NAME = #{groupName},
+	    	GROUP_DESCRIBE = #{groupDescribe}
+		WHERE GROUP_ID = #{groupId,jdbcType=NUMERIC}
+	</update>
+	
+	<select id="findAll" resultMap="groups">
+		select GROUP_ID,GROUP_NAME,GROUP_DESCRIBE,PARENT_ID,GROUP_LAYER FROM TB_GROUP ORDER BY GROUP_LAYER 
+	</select>
+	
+	<select id="findUsersByGroup" parameterType="int" resultMap="baseResultMap">
+		SELECT UB.*
+		FROM TB_USER_Group UR JOIN TB_USER_BASIC UB
+		ON UR.USER_ID = UB.USER_ID
+		WHERE UR.GROUP_ID = #{groupId} and UB.USER_STATE = 1
+	</select>
+	
+	<select id="findUsersByNoGroup" parameterType="int" resultMap="baseResultMap">
+		SELECT *
+		FROM TB_USER_BASIC 
+		WHERE USER_ID NOT IN (
+			SELECT UB.USER_ID
+			FROM TB_USER_Group UR LEFT JOIN TB_USER_BASIC UB
+			ON UR.USER_ID = UB.USER_ID
+			WHERE UR.GROUP_ID = #{groupId}
+		)
+		AND USER_STATE = 1
+	</select>
+	
+	<select id="findById" parameterType="int" resultMap="groups">
+		SELECT * FROM TB_GROUP WHERE GROUP_ID = #{id}
+	</select>
+	
+	<select id="findByParent" parameterType="int" resultMap="groups">
+		SELECT * FROM TB_GROUP
+		<where>
+			<choose>
+				<when test="_parameter == null">
+					PARENT_ID IS NULL
+				</when>
+				<otherwise>
+					PARENT_ID = #{_parameter}	
+				</otherwise>
+			</choose>
+		</where>
+	</select>
+	<!-- ******************查询所有数组的信息********************** -->
+	<select id="findAllGroup" resultMap="groupMessage">
+		select tg.GROUP_ID,tg.GROUP_NAME,tg.GROUP_DESCRIBE from tb_group tg
+	</select>
+	
+	<resultMap id="groupMessage" type="Group">
+		<id column="GROUP_ID" property="groupId" />
+		<result column="GROUP_NAME" property="groupName"/>
+		<result column="GROUP_DESCRIBE" property="groupDescribe"/>
+	</resultMap>
+	
+	<!-- 级联删除 -->
+	<delete id="deleteUserGroup" parameterType="java.util.List">
+		DELETE FROM TB_USER_GROUP
+		<where>
+			<foreach item="item" collection="list" separator="OR">
+				GROUP_ID = #{item,jdbcType=NUMERIC}
+			</foreach>
+		</where>
+	</delete>
+	
+	<delete id="deleteGroupPrivilege" parameterType="java.util.List">
+		DELETE FROM TB_SUBJECT_PRIVILEGE WHERE SUBJECT_TYPE = 3
+		<foreach item="item" collection="list" open="AND (" separator="OR" close=")">
+			SUBJECT_VALUE = #{item,jdbcType=NUMERIC}
+		</foreach>
+	</delete>
+
+</mapper>

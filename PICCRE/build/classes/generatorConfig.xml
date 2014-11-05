@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN" "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+
+<generatorConfiguration>
+    <!-- 读取配置文件 -->
+    <!-- 以命令行方式自动生成代码时，这里必须写全路径    -->
+    <properties url="file:///D:/JavaAll/JavaWorkspace/PICCRE/src/generatorOracleConfig.properties" />
+
+    <!-- 设置数据库驱动路径 -->
+    <classPathEntry location="${classPath}" />
+
+    <!-- 指定生成mybatis3的dao -->
+    <context id="umContext">
+
+        <!-- 生成所有注释 -->
+        <commentGenerator>
+            <property name="suppressAllComments" value="true" />
+        </commentGenerator>
+
+        <!-- jdbc配置 -->
+        <jdbcConnection driverClass="${jdbc.driver}"
+        connectionURL="${jdbc.url}" userId="${jdbc.user}" password="${jdbc.password}" />
+
+        <!-- java类型解析器，不强制使用BigDecimal来表示所有的十进制和数值字段 -->
+        <javaTypeResolver>
+            <property name="forceBigDecimals" value="false" />
+        </javaTypeResolver>
+
+        <!-- 数据对象生成器 -->
+        <javaModelGenerator targetPackage="${modelPackage}"
+        targetProject="${targetProject}" />
+
+        <!-- sql映射文件生成器 -->
+        <sqlMapGenerator targetPackage="${sqlMapperPackage}"
+        targetProject="${targetProject}" />
+
+        <!-- dao层接口生成器 -->
+        <javaClientGenerator type="XMLMAPPER" targetPackage="${daoPackage}" targetProject="${targetProject}" />
+
+        <!-- 配置数据库表 -->
+       <!--  
+        <table tableName="iclt_category" domainObjectName="Category">
+            <generatedKey column="ocid" sqlStatement="SELECT LAST_INSERT_ID() AS ID" identity="false" />
+        </table>
+         -->
+         
+        <!-- 应聘人员表 --> 
+        <table tableName="HR_APPLY_USER" domainObjectName="User"></table>
+        
+        <!-- 应聘人员学历信息表 -->
+        <table tableName="HR_APPLY_EDUCATION" domainObjectName="Education"></table>
+		
+		<!-- 应聘人员家庭成员信息表 -->
+        <table tableName="HE_APPLY_FAMILY" domainObjectName="Family"></table>
+        
+        <!-- 应聘人员履历信息表 -->
+        <table tableName="HR_APPLY_EXP" domainObjectName="Experience"></table>
+        
+        <!-- 应聘人员奖惩信息表 -->
+        <table tableName="HR_APPLY_REW_PUN" domainObjectName="Reward"></table>
+        
+        <!-- 应聘人员技术职称表 -->
+        <table tableName="HR_APPLY_TECH_DUTY" domainObjectName="Technical"></table>
+        
+        <!-- *********************************************************** -->
+       	
+       	<!-- 招聘信息表 -->
+		<table tableName="HR_APPLY_DEM" domainObjectName="Recruitment"></table>
+		
+		<!-- 部门信息表 -->
+		<table tableName="HR_DEPT" domainObjectName="Department"></table>
+		
+		<!-- 机构信息表 -->
+		<table tableName="HR_ORG" domainObjectName="Organization"></table>
+		
+		<!-- 岗位信息表 -->
+		<table tableName="HR_POST" domainObjectName="Position"></table>
+		
+		<!-- 招聘信息详细表 -->
+		<table tableName="HR_APP_DEM_OJ" domainObjectName="RecruitmentDetail"></table>
+		
+		
+		
+		
+    </context>
+</generatorConfiguration>

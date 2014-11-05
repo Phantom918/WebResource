@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   name=""
+   repos="https://192.168.1.100/svn/picchr"
+   revision="490"
+   last-author="xiaochonggao"
+   uuid="d558abd4-af74-fa4b-8ca2-01a2a0437fc6"
+   url="https://192.168.1.100/svn/picchr/01_Workspace/04_SourceCode/trunk/PICCRE/src/cn/picc/service/recruitment/impl"
+   committed-rev="487"
+   kind="dir"
+   committed-date="2014-06-06T01:26:41.466000Z"/>
+<entry
+   name="JobServiceImpl.java"
+   revision="603"
+   checksum="6577ab00d30d3d3ac8b257d7de0fcc92"
+   last-author="tanlei"
+   text-time="2014-06-19T06:44:33.543000Z"
+   committed-rev="603"
+   kind="file"
+   committed-date="2014-06-26T07:37:39.260000Z"/>
+<entry
+   name="LoginServiceImpl.java"
+   checksum="e406cbf8ab90dc6c13ec24b36ee04ae6"
+   last-author="tanlei"
+   text-time="2014-06-04T02:31:42.658000Z"
+   committed-rev="457"
+   kind="file"
+   committed-date="2014-06-04T02:31:42.658000Z"/>
+<entry
+   name="RequerServiceImpl.java"
+   checksum="db9af9e0b2dd1917b3962b383822ca06"
+   last-author="xiaochonggao"
+   text-time="2014-06-03T15:32:12.443000Z"
+   committed-rev="454"
+   kind="file"
+   committed-date="2014-06-03T15:32:12.443000Z"/>
+</wc-entries>

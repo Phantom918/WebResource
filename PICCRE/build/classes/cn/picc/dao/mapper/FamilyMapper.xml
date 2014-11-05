@@ -1,0 +1,326 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="cn.picc.dao.FamilyMapper" >
+  <resultMap id="BaseResultMap" type="cn.picc.model.Family" >
+    <id column="PK_FAMILY" property="pkFamily" jdbcType="DECIMAL" />
+    <result column="PK_EMP" property="pkEmp" jdbcType="DECIMAL" />
+    <result column="NAME" property="name" jdbcType="VARCHAR" />
+    <result column="RELATION" property="relation" jdbcType="VARCHAR" />
+    <result column="WORK_PLACE" property="workPlace" jdbcType="VARCHAR" />
+    <result column="DUTY" property="duty" jdbcType="VARCHAR" />
+    <result column="GENDER" property="gender" jdbcType="VARCHAR" />
+    <result column="BIRTH" property="birth" jdbcType="DATE" />
+    <result column="POLOTICS" property="polotics" jdbcType="VARCHAR" />
+    <result column="EDUCATION" property="education" jdbcType="VARCHAR" />
+    <result column="CONNECTION" property="connection" jdbcType="VARCHAR" />
+    <result column="MODIFY_TIME" property="modifyTime" jdbcType="TIMESTAMP" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    PK_FAMILY, PK_EMP, NAME, RELATION, WORK_PLACE, DUTY, GENDER, BIRTH, POLOTICS, EDUCATION, 
+    CONNECTION, MODIFY_TIME
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="cn.picc.model.FamilyExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from HE_APPLY_FAMILY
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.math.BigDecimal" >
+    select 
+    <include refid="Base_Column_List" />
+    from HE_APPLY_FAMILY
+    where PK_FAMILY = #{pkFamily,jdbcType=DECIMAL}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.math.BigDecimal" >
+    delete from HE_APPLY_FAMILY
+    where PK_FAMILY = #{pkFamily,jdbcType=DECIMAL}
+  </delete>
+  <delete id="deleteByExample" parameterType="cn.picc.model.FamilyExample" >
+    delete from HE_APPLY_FAMILY
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="cn.picc.model.Family" >
+    <selectKey keyProperty="pkFamily" resultType="java.math.BigDecimal" order="BEFORE">
+         select SEQ_HR_APPLY_FAMILY.NEXTVAL from dual
+    </selectKey>
+    insert into HE_APPLY_FAMILY (PK_FAMILY, PK_EMP, NAME, 
+      RELATION, WORK_PLACE, DUTY, 
+      GENDER, BIRTH, POLOTICS, 
+      EDUCATION, CONNECTION, MODIFY_TIME
+      )
+    values (#{pkFamily}, #{pkEmp,jdbcType=DECIMAL}, #{name,jdbcType=VARCHAR}, 
+      #{relation,jdbcType=VARCHAR}, #{workPlace,jdbcType=VARCHAR}, #{duty,jdbcType=VARCHAR}, 
+      #{gender,jdbcType=VARCHAR}, #{birth,jdbcType=DATE}, #{polotics,jdbcType=VARCHAR}, 
+      #{education,jdbcType=VARCHAR}, #{connection,jdbcType=VARCHAR}, #{modifyTime,jdbcType=TIMESTAMP}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="cn.picc.model.Family" >
+    insert into HE_APPLY_FAMILY
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="pkFamily != null" >
+        PK_FAMILY,
+      </if>
+      <if test="pkEmp != null" >
+        PK_EMP,
+      </if>
+      <if test="name != null" >
+        NAME,
+      </if>
+      <if test="relation != null" >
+        RELATION,
+      </if>
+      <if test="workPlace != null" >
+        WORK_PLACE,
+      </if>
+      <if test="duty != null" >
+        DUTY,
+      </if>
+      <if test="gender != null" >
+        GENDER,
+      </if>
+      <if test="birth != null" >
+        BIRTH,
+      </if>
+      <if test="polotics != null" >
+        POLOTICS,
+      </if>
+      <if test="education != null" >
+        EDUCATION,
+      </if>
+      <if test="connection != null" >
+        CONNECTION,
+      </if>
+      <if test="modifyTime != null" >
+        MODIFY_TIME,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="pkFamily != null" >
+        #{pkFamily,jdbcType=DECIMAL},
+      </if>
+      <if test="pkEmp != null" >
+        #{pkEmp,jdbcType=DECIMAL},
+      </if>
+      <if test="name != null" >
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="relation != null" >
+        #{relation,jdbcType=VARCHAR},
+      </if>
+      <if test="workPlace != null" >
+        #{workPlace,jdbcType=VARCHAR},
+      </if>
+      <if test="duty != null" >
+        #{duty,jdbcType=VARCHAR},
+      </if>
+      <if test="gender != null" >
+        #{gender,jdbcType=VARCHAR},
+      </if>
+      <if test="birth != null" >
+        #{birth,jdbcType=DATE},
+      </if>
+      <if test="polotics != null" >
+        #{polotics,jdbcType=VARCHAR},
+      </if>
+      <if test="education != null" >
+        #{education,jdbcType=VARCHAR},
+      </if>
+      <if test="connection != null" >
+        #{connection,jdbcType=VARCHAR},
+      </if>
+      <if test="modifyTime != null" >
+        #{modifyTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="cn.picc.model.FamilyExample" resultType="java.lang.Integer" >
+    select count(*) from HE_APPLY_FAMILY
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update HE_APPLY_FAMILY
+    <set >
+      <if test="record.pkFamily != null" >
+        PK_FAMILY = #{record.pkFamily,jdbcType=DECIMAL},
+      </if>
+      <if test="record.pkEmp != null" >
+        PK_EMP = #{record.pkEmp,jdbcType=DECIMAL},
+      </if>
+      <if test="record.name != null" >
+        NAME = #{record.name,jdbcType=VARCHAR},
+      </if>
+      <if test="record.relation != null" >
+        RELATION = #{record.relation,jdbcType=VARCHAR},
+      </if>
+      <if test="record.workPlace != null" >
+        WORK_PLACE = #{record.workPlace,jdbcType=VARCHAR},
+      </if>
+      <if test="record.duty != null" >
+        DUTY = #{record.duty,jdbcType=VARCHAR},
+      </if>
+      <if test="record.gender != null" >
+        GENDER = #{record.gender,jdbcType=VARCHAR},
+      </if>
+      <if test="record.birth != null" >
+        BIRTH = #{record.birth,jdbcType=DATE},
+      </if>
+      <if test="record.polotics != null" >
+        POLOTICS = #{record.polotics,jdbcType=VARCHAR},
+      </if>
+      <if test="record.education != null" >
+        EDUCATION = #{record.education,jdbcType=VARCHAR},
+      </if>
+      <if test="record.connection != null" >
+        CONNECTION = #{record.connection,jdbcType=VARCHAR},
+      </if>
+      <if test="record.modifyTime != null" >
+        MODIFY_TIME = #{record.modifyTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update HE_APPLY_FAMILY
+    set PK_FAMILY = #{record.pkFamily,jdbcType=DECIMAL},
+      PK_EMP = #{record.pkEmp,jdbcType=DECIMAL},
+      NAME = #{record.name,jdbcType=VARCHAR},
+      RELATION = #{record.relation,jdbcType=VARCHAR},
+      WORK_PLACE = #{record.workPlace,jdbcType=VARCHAR},
+      DUTY = #{record.duty,jdbcType=VARCHAR},
+      GENDER = #{record.gender,jdbcType=VARCHAR},
+      BIRTH = #{record.birth,jdbcType=DATE},
+      POLOTICS = #{record.polotics,jdbcType=VARCHAR},
+      EDUCATION = #{record.education,jdbcType=VARCHAR},
+      CONNECTION = #{record.connection,jdbcType=VARCHAR},
+      MODIFY_TIME = #{record.modifyTime,jdbcType=TIMESTAMP}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="cn.picc.model.Family" >
+    update HE_APPLY_FAMILY
+    <set >
+      <if test="pkEmp != null" >
+        PK_EMP = #{pkEmp,jdbcType=DECIMAL},
+      </if>
+      <if test="name != null" >
+        NAME = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="relation != null" >
+        RELATION = #{relation,jdbcType=VARCHAR},
+      </if>
+      <if test="workPlace != null" >
+        WORK_PLACE = #{workPlace,jdbcType=VARCHAR},
+      </if>
+      <if test="duty != null" >
+        DUTY = #{duty,jdbcType=VARCHAR},
+      </if>
+      <if test="gender != null" >
+        GENDER = #{gender,jdbcType=VARCHAR},
+      </if>
+      <if test="birth != null" >
+        BIRTH = #{birth,jdbcType=DATE},
+      </if>
+      <if test="polotics != null" >
+        POLOTICS = #{polotics,jdbcType=VARCHAR},
+      </if>
+      <if test="education != null" >
+        EDUCATION = #{education,jdbcType=VARCHAR},
+      </if>
+      <if test="connection != null" >
+        CONNECTION = #{connection,jdbcType=VARCHAR},
+      </if>
+      <if test="modifyTime != null" >
+        MODIFY_TIME = #{modifyTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where PK_FAMILY = #{pkFamily,jdbcType=DECIMAL}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="cn.picc.model.Family" >
+    update HE_APPLY_FAMILY
+    set PK_EMP = #{pkEmp,jdbcType=DECIMAL},
+      NAME = #{name,jdbcType=VARCHAR},
+      RELATION = #{relation,jdbcType=VARCHAR},
+      WORK_PLACE = #{workPlace,jdbcType=VARCHAR},
+      DUTY = #{duty,jdbcType=VARCHAR},
+      GENDER = #{gender,jdbcType=VARCHAR},
+      BIRTH = #{birth,jdbcType=DATE},
+      POLOTICS = #{polotics,jdbcType=VARCHAR},
+      EDUCATION = #{education,jdbcType=VARCHAR},
+      CONNECTION = #{connection,jdbcType=VARCHAR},
+      MODIFY_TIME = #{modifyTime,jdbcType=TIMESTAMP}
+    where PK_FAMILY = #{pkFamily,jdbcType=DECIMAL}
+  </update>
+</mapper>

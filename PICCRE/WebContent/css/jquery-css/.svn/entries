@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   name=""
+   repos="https://192.168.1.100/svn/picchr"
+   revision="476"
+   last-author="tanlei"
+   uuid="d558abd4-af74-fa4b-8ca2-01a2a0437fc6"
+   url="https://192.168.1.100/svn/picchr/01_Workspace/04_SourceCode/trunk/PICCRE/WebContent/css/jquery-css"
+   committed-rev="407"
+   kind="dir"
+   committed-date="2014-05-29T01:24:15.253000Z"/>
+<entry
+   name="docs.css"
+   checksum="0f6344b97c61bae5b3a86af615ae2b6a"
+   last-author="tanlei"
+   text-time="2014-05-29T01:24:15.253000Z"
+   committed-rev="407"
+   kind="file"
+   committed-date="2014-05-29T01:24:15.253000Z"/>
+<entry
+   name="font-awesome.min.css"
+   checksum="c2b418b4542ae8165c013a4435af5ecd"
+   last-author="tanlei"
+   text-time="2014-05-29T01:24:15.253000Z"
+   committed-rev="407"
+   kind="file"
+   committed-date="2014-05-29T01:24:15.253000Z"/>
+<entry
+   name="jquery-ui-1.10.0.custom.css"
+   checksum="1936166c901945762accd61308b326a2"
+   last-author="tanlei"
+   text-time="2014-05-29T01:24:15.253000Z"
+   committed-rev="407"
+   kind="file"
+   committed-date="2014-05-29T01:24:15.253000Z"/>
+<entry
+   name="prettify.css"
+   checksum="a987f72342eeaece278982a377eca816"
+   last-author="tanlei"
+   text-time="2014-05-29T01:24:15.253000Z"
+   committed-rev="407"
+   kind="file"
+   committed-date="2014-05-29T01:24:15.253000Z"/>
+</wc-entries>

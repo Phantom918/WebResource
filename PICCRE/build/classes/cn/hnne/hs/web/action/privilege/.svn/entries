@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   name=""
+   repos="https://192.168.1.100/svn/picchr"
+   revision="476"
+   last-author="tanlei"
+   uuid="d558abd4-af74-fa4b-8ca2-01a2a0437fc6"
+   url="https://192.168.1.100/svn/picchr/01_Workspace/04_SourceCode/trunk/PICCRE/src/cn/hnne/hs/web/action/privilege"
+   committed-rev="407"
+   kind="dir"
+   committed-date="2014-05-29T01:24:15.253000Z"/>
+<entry
+   name="AssignAction.java"
+   checksum="23383399e9962999c4db5d4986e0c44b"
+   last-author="tanlei"
+   text-time="2014-05-29T01:24:15.253000Z"
+   committed-rev="407"
+   kind="file"
+   committed-date="2014-05-29T01:24:15.253000Z"/>
+<entry
+   name="GroupAction.java"
+   checksum="7092df41fdcbe8ee4200f4ea3b2aabb6"
+   last-author="tanlei"
+   text-time="2014-05-29T01:24:15.253000Z"
+   committed-rev="407"
+   kind="file"
+   committed-date="2014-05-29T01:24:15.253000Z"/>
+<entry
+   name="ModuleAction.java"
+   checksum="efe6ed0351e609fbc37102776e131315"
+   last-author="tanlei"
+   text-time="2014-05-29T01:24:15.253000Z"
+   committed-rev="407"
+   kind="file"
+   committed-date="2014-05-29T01:24:15.253000Z"/>
+<entry
+   name="PrivilegeAction.java"
+   checksum="a24608bf4bae9e376b6f9201612e7f04"
+   last-author="tanlei"
+   text-time="2014-05-29T01:24:15.253000Z"
+   committed-rev="407"
+   kind="file"
+   committed-date="2014-05-29T01:24:15.253000Z"/>
+<entry
+   name="RoleAction.java"
+   checksum="19f497168bd32eafee5e5a5db89f3001"
+   last-author="tanlei"
+   text-time="2014-05-29T01:24:15.253000Z"
+   committed-rev="407"
+   kind="file"
+   committed-date="2014-05-29T01:24:15.253000Z"/>
+</wc-entries>

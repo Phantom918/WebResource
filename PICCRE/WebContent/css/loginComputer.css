@@ -1,0 +1,7 @@
+/*登陆界面的css样式*/
+body{
+	background-image:url(../images/login.jpg);
+	background-attachment:fixed;
+	background-repeat:no-repeat;
+	background-position:inherit;
+}

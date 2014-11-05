@@ -1,0 +1,14 @@
+@charset "utf-8";
+/* CSS Document */
+/*菜单整体样式*/
+.menu_padding{ padding:1em 0 1em 0.5em }
+/*父菜单按钮样式*/
+.menu_f{ font-size:16px; font-weight:700; font-stretch:ultra-expanded;  padding:0.5em 0 0 1.2em; cursor:pointer }
+/*子菜单按钮样式*/
+.menu_c{ font-size:14px; font-weight:500; font-stretch:ultra-expanded; padding:0.3em 0 0 2.5em; cursor:pointer }
+.menu_child{ font-size:14px; font-weight:500; font-stretch:ultra-expanded; cursor:pointer }
+/*父菜单按钮覆盖样式*/
+.menu_f:hover{background-color:rgb(229, 227, 233)}
+/*子菜单按钮覆盖样式*/
+.menu_c:hover{background-color:rgb(229, 227, 233);margin-left:0.3em; color:#06F; text-decoration:underline; }
+

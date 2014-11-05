@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   repos="https://192.168.1.100/svn/picchr"
+   name=""
+   revision="476"
+   last-author="xiaochonggao"
+   url="https://192.168.1.100/svn/picchr/01_Workspace/04_SourceCode/trunk/PICCRE/src/cn/picc/dao"
+   uuid="d558abd4-af74-fa4b-8ca2-01a2a0437fc6"
+   committed-rev="476"
+   kind="dir"
+   committed-date="2014-06-05T04:32:32.134000Z"/>
+<entry
+   name="DepartmentMapper.java"
+   checksum="51ea7312fe5efe54b649e817793d9c1b"
+   last-author="tanlei"
+   committed-rev="407"
+   text-time="2014-05-29T01:24:15.253000Z"
+   kind="file"
+   committed-date="2014-05-29T01:24:15.253000Z"/>
+<entry
+   name="EducationMapper.java"
+   checksum="eefa9b04196c616b5665f5b62154425e"
+   last-author="tanlei"
+   committed-rev="409"
+   text-time="2014-05-29T02:15:41.555000Z"
+   kind="file"
+   committed-date="2014-05-29T02:15:41.555000Z"/>
+<entry
+   name="ExperienceMapper.java"
+   checksum="a72b7280bd53fbee9d8e055d09d46475"
+   last-author="tanlei"
+   committed-rev="409"
+   text-time="2014-05-29T02:15:41.555000Z"
+   kind="file"
+   committed-date="2014-05-29T02:15:41.555000Z"/>
+<entry
+   name="FamilyMapper.java"
+   checksum="58a9025012d1feb11dad8a1214d1f1e6"
+   last-author="tanlei"
+   committed-rev="409"
+   text-time="2014-05-29T02:15:41.555000Z"
+   kind="file"
+   committed-date="2014-05-29T02:15:41.555000Z"/>
+<entry
+   name="LoginMapper.java"
+   checksum="313cd84293ea4a8dd4faaeeef6368c16"
+   last-author="tanlei"
+   committed-rev="437"
+   text-time="2014-06-03T00:29:18.433000Z"
+   kind="file"
+   committed-date="2014-06-03T00:29:18.433000Z"/>
+<entry
+   name="OrganizationMapper.java"
+   checksum="208b7ddbd83d50c344c8d0ebf7add6d5"
+   last-author="tanlei"
+   committed-rev="427"
+   text-time="2014-05-30T01:07:57.267000Z"
+   kind="file"
+   committed-date="2014-05-30T01:07:57.267000Z"/>
+<entry
+   name="PositionMapper.java"
+   checksum="b96209187e29e41012b759d5cdcf2e67"
+   last-author="tanlei"
+   committed-rev="409"
+   text-time="2014-05-29T02:15:41.555000Z"
+   kind="file"
+   committed-date="2014-05-29T02:15:41.555000Z"/>
+<entry
+   name="RecruitmentDetailMapper.java"
+   checksum="d1545eeb67851145a10177c34ffc2a81"
+   last-author="tanlei"
+   committed-rev="427"
+   text-time="2014-05-30T01:07:57.267000Z"
+   kind="file"
+   committed-date="2014-05-30T01:07:57.267000Z"/>
+<entry
+   name="RecruitmentMapper.java"
+   checksum="ad56f68b3f1136cafed8e034467c58b4"
+   last-author="xiaochonggao"
+   committed-rev="454"
+   text-time="2014-06-03T15:32:12.443000Z"
+   kind="file"
+   committed-date="2014-06-03T15:32:12.443000Z"/>
+<entry
+   name="RewardMapper.java"
+   checksum="63df1d3ac133d2c56834fdfd851c8f4b"
+   last-author="tanlei"
+   committed-rev="409"
+   text-time="2014-05-29T02:15:41.555000Z"
+   kind="file"
+   committed-date="2014-05-29T02:15:41.555000Z"/>
+<entry
+   name="TechnicalMapper.java"
+   checksum="22aa48de2487f45eb8db6414dd1032f7"
+   last-author="tanlei"
+   committed-rev="409"
+   text-time="2014-05-29T02:15:41.555000Z"
+   kind="file"
+   committed-date="2014-05-29T02:15:41.555000Z"/>
+<entry
+   name="UserMapper.java"
+   revision="486"
+   checksum="0e727ca4001954011fe610ee94aa4795"
+   last-author="tanlei"
+   committed-rev="486"
+   text-time="2014-06-05T08:07:19.250000Z"
+   kind="file"
+   committed-date="2014-06-05T08:34:06.139000Z"/>
+<entry
+   name="mapper"
+   kind="dir"/>
+</wc-entries>

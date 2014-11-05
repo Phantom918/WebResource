@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="cn.hnne.hs.dao.privilege.PrivilegeMapper">
+
+	<resultMap type="Privilege" id="privilege">
+		<id property="privilegeId" column="PRIVILEGE_ID" jdbcType="NUMERIC"/>
+		<result property="privilegeName" column="PRIVILEGE_NAME" jdbcType="VARCHAR"/>
+		<result property="privilegeCode" column="PRIVILEGE_CODE" jdbcType="NUMERIC"/>
+		<result property="privilegeAction" column="PRIVILEGE_ACTION" jdbcType="VARCHAR"/>
+		<association property="module" javaType="Module">
+			<id property="moduleId" column="MODULE_ID" jdbcType="NUMERIC" />
+		</association>
+	</resultMap>
+
+	<select id="getPrivilegeByAction" parameterType="string" resultMap="privilege">
+		SELECT PRIVILEGE_ID, PRIVILEGE_NAME, PRIVILEGE_CODE, PRIVILEGE_ACTION, MODULE_ID
+		FROM TB_PRIVILEGE
+		WHERE PRIVILEGE_ACTION = #{privilegeAction}
+	</select>
+
+	<select id="findPrivileges" parameterType="int" resultMap="privilege">
+		SELECT PRIVILEGE_ID, PRIVILEGE_NAME, PRIVILEGE_CODE, PRIVILEGE_ACTION, MODULE_ID
+		FROM TB_PRIVILEGE
+		WHERE MODULE_ID = #{moduleId}
+	</select>
+
+	<insert id="add" parameterType="Privilege">
+		INSERT INTO TB_PRIVILEGE (PRIVILEGE_ID,PRIVILEGE_NAME,PRIVILEGE_CODE,PRIVILEGE_ACTION,MODULE_ID)
+		VALUES ((PRIVILEGE_SEQ.nextval),#{privilegeName,jdbcType=VARCHAR},#{privilegeCode,jdbcType=NUMERIC,jdbcType=VARCHAR},#{privilegeAction},#{module.moduleId,jdbcType=NUMERIC})
+	</insert>
+	
+	<delete id="delete" parameterType="int">
+		DELETE FROM TB_PRIVILEGE WHERE PRIVILEGE_ID = #{id,jdbcType=NUMERIC}
+	</delete>
+	
+	<delete id="deleteList" parameterType="java.util.List">
+		DELETE FROM TB_PRIVILEGE
+		<foreach item="id" collection="list" open=" WHERE " separator=" OR " close="">
+			PRIVILEGE_ID = #{id}
+		</foreach>
+	</delete>
+	<!-- 级联删除对应拥有某权限的实体引用 -->
+	<delete id="deleteSubjectPrivilege" parameterType="int">
+		DELETE FROM TB_SUBJECT_PRIVILEGE WHERE PRIVILEGE_ID=#{id,jdbcType=NUMERIC}
+	</delete>
+	<!-- 级联删除多个权限对应的实体引用 -->
+	<delete id="deleteSubjectPrivileges" parameterType="java.util.List">
+		DELETE FROM TB_SUBJECT_PRIVILEGE
+		<foreach item="item" collection="list" open="WHERE " separator="OR" close="">
+			PRIVILEGE_ID = #{item,jdbcType=NUMERIC}
+		</foreach>
+	</delete>
+	
+	<update id="update" parameterType="Privilege">
+		UPDATE TB_ROLE SET
+	    	PRIVILEGE_NAME = #{privilegeName,jdbcType=VARCHAR},
+	    	PRIVILEGE_CODE = #{privilegeCode,jdbcType=NUMERIC},
+	    	PRIVILEGE_ACTION = #{privilegeAction,jdbcType=VARCHAR}
+		WHERE PRIVILEGE_ID = #{privilegeId,jdbcType=NUMERIC}
+	</update>
+	
+	<update id="updatePrivilege" parameterType="Privilege">
+		UPDATE TB_PRIVILEGE SET
+	    	PRIVILEGE_NAME = #{privilegeName,jdbcType=VARCHAR},
+	    	PRIVILEGE_CODE = #{privilegeCode,jdbcType=NUMERIC},
+	    	PRIVILEGE_ACTION = #{privilegeAction,jdbcType=VARCHAR},
+	    	MODULE_ID = #{module.moduleId,jdbcType=NUMERIC}
+		WHERE PRIVILEGE_ID = #{privilegeId,jdbcType=NUMERIC}
+	</update>
+	
+	<select id="findAll" resultMap="privilege">
+		SELECT ROLE_ID, ROLE_NAME, ROLE_DESCRIBE FROM TB_ROLE
+	</select>
+	
+	<!-- ****************查询出某个对象的权限信息***************** -->
+	<resultMap type="Privilege" id="privilegeMessage">
+		<id property="privilegeId" column="PRIVILEGE_ID" />
+	</resultMap>
+
+	<select id="findSomeonePrivileges" resultType="int">
+		SELECT
+			sp.PRIVILEGE_ID
+		FROM
+			tb_subject_privilege sp
+		WHERE
+			sp.SUBJECT_TYPE =#{0}
+		AND sp.SUBJECT_VALUE =#{1}
+	</select>
+	
+	<!-- *****************批量删除对象的权限******************** -->
+	<delete id="deledteSomeonePrivileges" parameterType="java.util.Map">
+		DELETE FROM tb_subject_privilege WHERE subject_type = #{objectType} AND 
+		subject_value = #{objectId,jdbcType=NUMERIC} 
+		<foreach item="tempDelete" collection="deleteId" open="and (" separator="OR" close=")">
+			PRIVILEGE_id = #{tempDelete,jdbcType=NUMERIC}
+		</foreach>
+	</delete>
+	<!-- 删除主题权限表的关联数据 -->
+	<delete id="deleteSubPriByModuleId" parameterType="Integer">
+		delete from TB_SUBJECT_PRIVILEGE ts 
+		where ts.privilege_id in(
+		 select t.privilege_id from tb_privilege t where t.module_id = #{moduleId,jdbcType=NUMERIC}
+		)
+	</delete>
+	<delete id="deletePriByModuleId" parameterType="Integer">
+		 delete from tb_privilege t where t.module_id = #{moduleId,jdbcType=NUMERIC}
+	</delete>
+	
+	<!-- *****************批量添加对象的权限******************** -->
+	<!-- Oracle-批量插入 -->
+	<insert id="addSomeonePrivileges" parameterType="java.util.Map">
+		Insert INTO tb_subject_privilege(SUBJECT_PRIVILEGE_ID,subject_type,subject_value,PRIVILEGE_id) 
+		select SUB_PRIVILEGE_SEQ.nextval ,t.* from (
+		<foreach collection="addId" item="tempAdd" separator="union all">
+			select
+			   #{objectType,jdbcType=NUMERIC} as subject_type,
+			   #{objectId,jdbcType=NUMERIC} as subject_value,
+			   #{tempAdd,jdbcType=NUMERIC} as PRIVILEGE_id
+			from dual	
+		</foreach>
+		) t
+	</insert>
+	<!-- MySql批量插入 -->
+	<!-- <insert id="addSomeonePrivileges" parameterType="java.util.Map">
+		Insert INTO tb_subject_privilege(subject_type,subject_value,PRIVILEGE_id) VALUES
+		<foreach collection="addId" item="tempAdd" separator=",">
+			(#{objectType,jdbcType=NUMERIC},#{objectId,jdbcType=NUMERIC},#{tempAdd,jdbcType=NUMERIC})
+		</foreach>
+	</insert> -->
+	
+
+</mapper>
